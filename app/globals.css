@@ -31,9 +31,13 @@ main {
 }
 
 section {
-  height: calc(100vh - 80px);
-  @apply mb-5 px-12 w-full flex flex-col items-center justify-center text-dark-gray;
-  @apply border border-blue-500;
+  height: calc(100vh - 65px);
+  @apply mb-5 px-12 w-full flex flex-col justify-center items-center text-dark-gray;
+  /* @apply border border-blue-500; */
+}
+
+section:last-of-type {
+  @apply mb-0;
 }
 
 section .content {
@@ -42,7 +46,7 @@ section .content {
 }
 
 .section-title {
-  @apply text-6xl font-bold tracking-tighter mb-6;
+  @apply text-6xl font-bold tracking-tighter mb-8;
 }
 
 /* Work Section */
@@ -51,5 +55,14 @@ section .content {
 }
 
 .work-grid div {
-  @apply w-full border border-red-500;
+  @apply w-full;
+}
+
+/* Animations */
+circle,
+rect,
+line {
+  stroke-width: 10px;
+  stroke-linecap: round;
+  fill: transparent;
 }

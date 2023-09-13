@@ -1,11 +1,14 @@
 import Image from 'next/image';
+import SlideIn from '../animations/SlideIn';
 
 export default function About() {
   return (
     <section id='about'>
-      <div className='content justify-cente'>
+      <div className='content justify-center'>
         <div className='flex flex-col rounded-sm p-8'>
-          <span className='section-title'>About.</span>
+          <SlideIn>
+            <span className='section-title'>About.</span>
+          </SlideIn>
           <p className='text-md font-semibold text-gray-500 tracking-wide'>
             Dog dad. Gamer. Tech Fiend.
           </p>
@@ -18,16 +21,15 @@ export default function About() {
             Current Tool Belt: React, Next.js and Tailwind CSS.
           </p> */}
           <p className='mt-3 text-md'>
-            Previously spent 2 years contributing to the success of a leading
-            tech start up.
+            Contributed to the growth and success of a leading start-up during
+            their evolution to a Inc. 500 company, also got to wear a lot of
+            hats.
           </p>
           <p className='text-md'>
             When I&apos;m not coding beautiful and intuitive designs for the
-            web, I enjoy painting and creating digital art.
+            web,
           </p>
-          {/* Hi, I'm [Your Name]. 
-          I'm a Frontend Developer with 3 years of experience, skilled in React, Next.js, and Tailwind CSS. 
-          Spent 2 years at a leading startup. Also an artist, specializing in spray paint portraits. */}
+          <p className='text-md'>I enjoy painting and creating digital art.</p>
         </div>
 
         <div className='relative flex items-center bg-slate-300 rounded-md'>
