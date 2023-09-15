@@ -1,6 +1,9 @@
 'use client';
 import { Variants, motion } from 'framer-motion';
 import TestNav from './TestNav';
+import DrawCircle from '../components/animations/DrawCircle';
+import DrawSquare from '../components/animations/DrawSquareHero';
+import TestHero from './TestHero';
 
 const draw: Variants = {
   hidden: { pathLength: 0, opacity: 0 },
@@ -19,33 +22,15 @@ const draw: Variants = {
 
 export default function Testing() {
   return (
-    <div className='w-full flex justify-center'>
-      <TestNav />
-    </div>
-    // <motion.svg
-    //   width='600'
-    //   height='600'
-    //   viewBox='0 0 600 600'
-    //   initial='hidden'
-    //   animate='visible'
-    // >
-    //   <motion.circle
-    //     cx='100'
-    //     cy='100'
-    //     r='80'
-    //     stroke='#cbd5e1'
-    //     variants={draw}
-    //     custom={1}
-    //   />
-    //   <motion.line
-    //     x1='220'
-    //     y1='30'
-    //     x2='360'
-    //     y2='170'
-    //     stroke='#00cc88'
-    //     variants={draw}
-    //     custom={2}
-    //   />
-    // </motion.svg>
+    <>
+      {/* <TestNav /> */}
+      {/* <div className='w-full flex justify-center mb-8'>
+        <DrawCircle title='JM' />
+      </div>
+      <div className='w-full flex justify-center'>
+        <DrawSquare src='test' />
+      </div> */}
+      <TestHero />
+    </>
   );
 }

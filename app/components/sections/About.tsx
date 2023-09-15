@@ -4,10 +4,12 @@ import SlideIn from '../animations/SlideIn';
 export default function About() {
   return (
     <section id='about'>
-      <div className='content justify-center'>
+      <div className='flex w-full justify-center px-40'>
         <div className='flex flex-col rounded-sm p-8'>
           <SlideIn>
-            <span className='section-title'>About.</span>
+            <span className='text-6xl font-bold tracking-tighter mb-8'>
+              About.
+            </span>
           </SlideIn>
           <p className='text-md font-semibold text-gray-500 tracking-wide'>
             Dog dad. Gamer. Tech Fiend.

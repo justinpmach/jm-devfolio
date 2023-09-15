@@ -21,42 +21,24 @@ video {
   display: block;
   max-width: 100%;
 }
+@layer base {
+  body {
+    @apply min-h-screen bg-gray-100;
+  }
 
-body {
-  @apply min-h-screen bg-gray-100;
+  main {
+    @apply min-h-screen w-full;
+  }
+  section {
+    @apply h-[calc(100vh-65px)] w-full flex flex-col justify-center items-center text-dark-gray mb-5;
+    /* @apply border border-blue-500; */
+  }
+
+  section:last-of-type {
+    @apply mb-0;
+  }
 }
-
-main {
-  @apply min-h-screen w-full;
-}
-
-section {
-  height: calc(100vh - 65px);
-  @apply mb-5 px-12 w-full flex flex-col justify-center items-center text-dark-gray;
-  /* @apply border border-blue-500; */
-}
-
-section:last-of-type {
-  @apply mb-0;
-}
-
-section .content {
-  @apply flex w-full;
-  /* @apply border border-green-500; */
-}
-
-.section-title {
-  @apply text-6xl font-bold tracking-tighter mb-8;
-}
-
 /* Work Section */
-.work-grid {
-  @apply grid grid-cols-3 gap-4;
-}
-
-.work-grid div {
-  @apply w-full;
-}
 
 /* Animations */
 circle,

@@ -1,5 +1,5 @@
-import DrawSquareHero from '../animations/DrawSquareHero';
-import SlideIn from '../animations/SlideIn';
+import SlideIn from '../components/animations/SlideIn';
+import DrawSquareHero from '../components/animations/DrawSquareHero';
 
 export default function TestHero() {
   return (
@@ -21,6 +21,18 @@ export default function TestHero() {
           </p>
         </div>
 
+        {/* <div className='relative flex items-center bg-slate-300 rounded-md'>
+          <div className='absolute top-28 w-full h-1/4 skew-y-12 bg-gray-100'></div>
+          <div className='h-full w-full flex'>
+            <Image
+              className='rounded-md z-20'
+              src='/jm-hero-transparent.png'
+              width={400}
+              height={400}
+              alt='Banner picture of Justin'
+            />
+          </div>
+        </div> */}
         <DrawSquareHero />
       </div>
     </section>

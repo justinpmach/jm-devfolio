@@ -41,12 +41,12 @@ export default function FadeInView({
   }, [isInView]);
 
   return (
-    <div ref={ref} className='fade-in-wrapper'>
+    <div ref={ref}>
       <motion.div
+        className='transition-all duration-[900ms] ease-[cubic-bezier(0.17, 0.55, 0.55, 1)] delay-[5000ms]'
         initial='hidden'
         animate={controls}
         viewport={{ once: true }}
-        transition={{ duration: 0.4, ease: 'easeIn' }}
         variants={fadeInVariants}
       >
         {children}

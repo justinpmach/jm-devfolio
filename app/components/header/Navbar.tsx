@@ -1,7 +1,10 @@
 'use client';
-import Link from 'next/link';
 import { Variants, motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import ToggleSwitch from '../ToggleSwitch';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import DrawCircle from '../animations/DrawCircle';
 
 const navItems = [
   {
@@ -49,6 +52,16 @@ export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('bg-neutral-900');
+      document.body.classList.remove('bg-gray-100');
+    } else {
+      document.body.classList.add('bg-gray-100');
+      document.body.classList.remove('bg-neutral-900');
+    }
+  }, [darkMode]);
+
   const scrollToSection = (sectionId: string) => {
     if (sectionId === 'home') {
       document.documentElement.scrollIntoView({
@@ -62,42 +75,21 @@ export default function Navbar() {
 
   const handleDarkMode = () => {
     setDarkMode(!darkMode);
-    if (darkMode) {
-      document.body.classList.remove('bg-gray-100');
-      document.body.classList.add('bg-neutral-900');
-    } else {
-      document.body.classList.add('bg-gray-100');
-      document.body.classList.remove('bg-neutral-900');
-    }
   };
   return (
     <>
-      <button
-        className='absolute top-0 right-16 z-40'
-        onClick={() => {
-          setHidden(!hidden);
-        }}
-      >
-        X
-      </button>
-      <button
-        className='absolute top-0 right-24 z-40'
-        onClick={() => {
-          handleDarkMode();
-        }}
-      >
-        Dark Mode
-      </button>
+      <ToggleSwitch isOn={darkMode} handleClick={handleDarkMode} />
       <motion.nav
-        className='sticky top-0 z-30 bg-gray-50 text-dark-gray shadow-sm'
+        className='bg-gray-50'
         animate={hidden ? 'hidden' : 'visible'}
         variants={navVariants}
       >
-        <div className='mx-auto max-w-7xl px-8'>
-          <div className='relative flex h-16 items-center justify-between'>
-            <div className='flex flex-shrink-0 items-center border rounded-full'>
-              JM
-            </div>
+        <div className='relative mx-auto max-w-7xl w-full'>
+          <div className='flex h-16 items-center justify-between px-16'>
+            {/* <div className='flex justify-center items-center border w-8 h-8 rounded-full'>
+              <span className=''>JM</span>
+            </div> */}
+            <DrawCircle title='JM' />
             <div className='hidden sm:ml-6 sm:block'>
               <div className='flex space-x-4'>
                 {navItems.map((item, index) => {
@@ -116,6 +108,22 @@ export default function Navbar() {
           </div>
         </div>
       </motion.nav>
+      <button
+        className='w-6 h-6 absolute top-5 right-16'
+        onClick={() => setHidden(!hidden)}
+      >
+        <div
+          className={`w-6 after:content-[''] after:block after:w-full after:h-[2px] after:relative after:rounded-md before:content-[''] before:block before:w-full before:h-[2px] before:relative before:rounded-md
+          after:transition-all after:duration-[500ms] before:transition-all before:duration-[500ms]
+          after:ease-[cubic-bezier(0.76,0,0.24,1)] before:ease-[cubic-bezier(0.76,0,0.24,1)]
+          ${
+            hidden
+              ? 'after:-top-[1px] after:rotate-45 before:top-[1px] before:-rotate-45 after:bg-dark-gray before:bg-dark-gray'
+              : 'after:-top-[4px] before:top-[4px] after:bg-gray-400 before:bg-gray-400'
+          }`}
+        ></div>
+        {/* <FontAwesomeIcon icon={faBars} className='w-6 h-6' /> */}
+      </button>
     </>
   );
 }

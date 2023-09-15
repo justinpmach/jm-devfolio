@@ -57,7 +57,7 @@ export default function Work() {
               key={selected.id ?? 'empty'}
               initial={{
                 y: -100,
-                opacity: 1,
+                opacity: 0,
               }}
               animate={{
                 y: 100,
@@ -75,15 +75,17 @@ export default function Work() {
           </div>
         )}
       </AnimatePresence>
-      <div className='content justify-center'>
+      <div className='flex w-full justify-center px-40'>
         <div className='flex flex-col p-8 w-full'>
           <SlideIn>
-            <span className='section-title'>Work.</span>
+            <span className='text-6xl font-bold tracking-tighter mb-8'>
+              Work.
+            </span>
           </SlideIn>
           <p className='text-md font-semibold text-gray-500 tracking-wide'>
             Projects
           </p>
-          <div className='work-grid'>
+          <div className='grid grid-cols-3 gap-4'>
             {projects.map(p => (
               <motion.div
                 layout
@@ -91,7 +93,7 @@ export default function Work() {
                 key={p.id}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className='cursor-pointer flex justify-center items-center'
+                className='w-full cursor-pointer flex justify-center items-center'
                 onClick={() => setSelected(p)}
               >
                 <Card id={p.id} title={p.title} src={p.src} />
