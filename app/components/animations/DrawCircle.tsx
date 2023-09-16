@@ -7,15 +7,15 @@ const draw: Variants = {
     pathLength: 1,
     opacity: 1,
     transition: {
-      pathLength: { delay: 0.7, type: 'spring', duration: 0.7, bounce: 0 },
-      opacity: { delay: 0.7, duration: 0.01 },
+      pathLength: { delay: 0.5, type: 'spring', duration: 0.7, bounce: 0 },
+      opacity: { delay: 0.5, duration: 0.01 },
     },
   },
 };
 
 export default function DrawCircle({ title }: { title: string }) {
   return (
-    <div className='relative flex justify-center items-center z-50'>
+    <div className='relative flex justify-center items-center'>
       <motion.svg
         width='50px'
         height='50px'
@@ -34,9 +34,7 @@ export default function DrawCircle({ title }: { title: string }) {
           custom={1}
         />
       </motion.svg>
-      <div className='absolute flex justify-center items-center z-60'>
-        {title}
-      </div>
+      <div className='absolute flex justify-center items-center'>{title}</div>
     </div>
   );
 }

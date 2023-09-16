@@ -27,7 +27,7 @@ video {
   }
 
   main {
-    @apply min-h-screen w-full;
+    @apply min-h-screen w-full flex flex-col;
   }
   section {
     @apply h-[calc(100vh-65px)] w-full flex flex-col justify-center items-center text-dark-gray mb-5;

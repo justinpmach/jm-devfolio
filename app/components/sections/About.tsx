@@ -38,7 +38,7 @@ export default function About() {
           <div className='absolute top-28 w-full h-1/4 skew-y-6 bg-gray-100'></div>
           <div className='h-full w-full flex'>
             <Image
-              className='rounded-md z-20'
+              className='rounded-md'
               src='/jm-headshot-half.png'
               width={400}
               height={400}

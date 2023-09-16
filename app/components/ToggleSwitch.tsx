@@ -9,17 +9,17 @@ export default function ToggleSwitch({
   handleClick: Function;
 }) {
   return (
-    <div className='relative'>
+    <div className='relative flex justify-center'>
       {/* Switch */}
       <div
-        className={`absolute top-5 left-4 z-50 w-10 h-6 flex rounded-full p-1 cursor-pointer bg-gray-300 ${
+        className={`w-8 h-4 flex items-center rounded-full p-1 cursor-pointer bg-gray-300 ${
           isOn ? 'justify-end' : 'justify-start'
         }`}
         onClick={() => handleClick()}
       >
         {/* Handle */}
         <motion.div
-          className={`w-4 h-4 z-50 rounded-[40px] ${
+          className={`w-3 h-3 z-40 rounded-[40px] ${
             isOn ? 'bg-dark-gray' : 'bg-white '
           }`}
           layout

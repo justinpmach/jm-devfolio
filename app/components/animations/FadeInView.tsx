@@ -4,7 +4,8 @@ import { useEffect, useRef } from 'react';
 
 const fadeInVariants: Variants = {
   hidden: {
-    clipPath: 'inset(50% 50% 90% 50% round 200px)',
+    clipPath: 'inset(50% 50% 90% 50% round 0 200px)',
+    opacity: 0,
     transition: {
       type: 'spring',
       bounce: 0,
@@ -12,7 +13,8 @@ const fadeInVariants: Variants = {
     },
   },
   visible: {
-    clipPath: 'inset(0% 0% 0% 0% round 200px)',
+    clipPath: 'inset(0% 0% 0% 0% round 0 200px)',
+    opacity: 1,
     transition: {
       type: 'spring',
       damping: 35,
