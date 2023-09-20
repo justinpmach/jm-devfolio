@@ -1,14 +1,22 @@
 'use client';
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
 import SlideIn from '../animations/SlideIn';
-import Card from '../Card';
+import ProjectsCarousel from '../animations/ProjectsCarousel';
 
 interface Project {
   id: string;
   title: string;
   src: string;
 }
+
+// Maintained and improved Angular application while simultaneously assisting in a large-scale transition to React and Tailwind
+// Played a key role in implementing numerous successful A/B tests, leading to revenue increase and operational savings
+// Led the successful redesign of the core product application, increasing user experience and delivering a fresh, well-received look
+
+// Developed a bug tracker and reporter for company-wide use via Slack workflows, creating tickets in Jira via Zappier
+// Started as a QA Engineer, quickly transitioning to a dual role that included Front End Developer responsibilities within three months
+// Assisted the Member Services team in resolving bugs, providing large-scale and individual-level solutions for immediate clients
+// Worked closely with the Advisors team to maintain and enhance the advisor dashboard, a critical revenue source for the company
 
 const projects: Project[] = [
   {
@@ -44,61 +52,28 @@ const projects: Project[] = [
 ];
 
 export default function Work() {
-  const [selected, setSelected] = useState<Project | null>(null);
+  const [selected, setSelected] = useState<Project | null>(projects[0]);
 
   return (
     <section id='work'>
-      <AnimatePresence>
-        {selected && (
-          <div className='relative w-full '>
-            <motion.div
-              className='absolute top-0 w-full cursor-pointer'
-              onClick={() => setSelected(null)}
-              key={selected.id ?? 'empty'}
-              initial={{
-                y: -100,
-                opacity: 0,
-              }}
-              animate={{
-                y: 100,
-                opacity: 1,
-                zIndex: 3,
-              }}
-              exit={{ y: -100, opacity: 0 }}
-            >
-              <Card
-                id={selected.id}
-                title={selected.title}
-                src={selected.src}
-              />
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-      <div className='flex w-full justify-center px-40'>
-        <div className='flex flex-col p-8 w-full'>
-          <SlideIn>
-            <span className='text-6xl font-bold tracking-tighter mb-8'>
-              Work.
-            </span>
-          </SlideIn>
-          <p className='text-md font-semibold text-gray-500 tracking-wide'>
-            Projects
-          </p>
-          <div className='grid grid-cols-3 gap-4'>
-            {projects.map(p => (
-              <motion.div
-                layout
-                layoutId={p.id}
-                key={p.id}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className='w-full cursor-pointer flex justify-center items-center'
-                onClick={() => setSelected(p)}
-              >
-                <Card id={p.id} title={p.title} src={p.src} />
-              </motion.div>
-            ))}
+      <div className='relative flex flex-col w-full justify-center px-40 z-0'>
+        <SlideIn>
+          <span className='text-6xl font-bold tracking-tighter mb-8'>
+            Work.
+          </span>
+        </SlideIn>
+        <p className='text-md font-semibold text-gray-500 tracking-wide'>
+          Projects
+        </p>
+        <div className='flex w-full gap-5 mt-5'>
+          <ProjectsCarousel projects={projects} setSelected={setSelected} />
+          <div className='flex flex-col items-end justify-center w-full p-7'>
+            {selected && (
+              <span className='uppercase font-md tracking-widest'>
+                {selected?.title}
+              </span>
+            )}
+            <div className='mt-8 border border-green-600 w-full'>Text</div>
           </div>
         </div>
       </div>

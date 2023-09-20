@@ -29,7 +29,7 @@ export default function DrawCircle({ title }: { title: string }) {
           cy='50'
           r='30'
           width='1px'
-          stroke='#cbd5e1'
+          stroke='#4b5563'
           variants={draw}
           custom={1}
         />

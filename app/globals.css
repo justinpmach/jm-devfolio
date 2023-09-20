@@ -23,14 +23,14 @@ video {
 }
 @layer base {
   body {
-    @apply min-h-screen bg-gray-100;
+    @apply min-h-screen;
   }
 
   main {
     @apply min-h-screen w-full flex flex-col;
   }
   section {
-    @apply h-[calc(100vh-65px)] w-full flex flex-col justify-center items-center text-dark-gray mb-5;
+    @apply h-[calc(100vh-80px)] w-full flex flex-col justify-center items-center text-dark-gray;
     /* @apply border border-blue-500; */
   }
 

@@ -1,15 +1,16 @@
-'use client';
-import { useEffect } from 'react';
-
 import FadeInView from './components/animations/FadeInView';
 import About from './components/sections/About';
+import Contact from './components/sections/Contact';
 import Hero from './components/sections/Hero';
 import Work from './components/sections/Work';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Justin Mach Dev',
+  description: 'Frontend Developer',
+};
 
 export default function Home() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <>
       <FadeInView>
@@ -17,6 +18,7 @@ export default function Home() {
       </FadeInView>
       <About />
       <Work />
+      <Contact />
     </>
   );
 }

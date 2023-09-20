@@ -3,7 +3,7 @@ import { motion, Variants } from 'framer-motion';
 
 const sentenceVariants: Variants = {
   hidden: {
-    opacity: 1,
+    opacity: 0,
   },
   visible: {
     opacity: 1,

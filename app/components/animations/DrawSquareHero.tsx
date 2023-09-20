@@ -22,13 +22,15 @@ const draw: Variants = {
 };
 
 const imageVariants: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { y: -100, opacity: 0 },
   visible: {
+    y: 0,
     opacity: 1,
     transition: {
-      type: 'tween',
+      type: 'spring',
       duration: 0.7,
       bounce: 0,
+      y: { delay: 0.05 },
     },
   },
 };
@@ -48,7 +50,7 @@ export default function DrawSquareHero() {
   return (
     <div className='relative flex justify-center items-center'>
       <motion.div
-        className='absolute top-28 w-[400px] h-1/4 skew-y-12 bg-gray-100'
+        className='absolute top-28 w-[400px] h-1/4 skew-y-12 bg-gray-50'
         variants={skewVariants}
       ></motion.div>
       <motion.svg
@@ -63,8 +65,8 @@ export default function DrawSquareHero() {
           height='400'
           x='25'
           y='25'
-          rx='10'
-          ry='10'
+          rx='0.5rem'
+          ry='0.2rem'
           stroke='#e2e8f0'
           variants={draw}
           style={{ fill: '#cbd5e1' }}
@@ -73,7 +75,7 @@ export default function DrawSquareHero() {
       <div className='absolute flex justify-center items-center '>
         <motion.div variants={imageVariants}>
           <Image
-            className='rounded-md'
+            className='rounded-sm'
             src='/jm-hero-transparent.png'
             width={400}
             height={400}

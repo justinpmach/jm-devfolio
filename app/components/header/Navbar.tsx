@@ -1,5 +1,5 @@
 'use client';
-import { Variants, motion } from 'framer-motion';
+import { AnimatePresence, Variants, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons/faAddressCard';
@@ -37,21 +37,10 @@ const navItems = [
 ];
 
 const navVariants: Variants = {
-  initial: {
-    opacity: 0,
-    height: '100%',
-    transition: {
-      type: 'spring',
-      bounce: 0,
-      duration: 0.5,
-      ease: 'easeIn',
-      staggerChildren: 0.2,
-      staggerDirection: 1,
-    },
-  },
   hidden: {
+    y: -50,
     opacity: 0,
-    height: '0%',
+    height: '20%',
     transition: {
       type: 'spring',
       bounce: 0,
@@ -62,8 +51,9 @@ const navVariants: Variants = {
     },
   },
   visible: {
+    y: 0,
     opacity: 1,
-    height: '100%',
+    height: '50%',
     transition: {
       type: 'spring',
       bounce: 0,
@@ -100,19 +90,10 @@ const hoverVariants = {
 
 export default function NavBar() {
   const [hidden, setHidden] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add('bg-neutral-900');
-      document.body.classList.remove('bg-gray-100');
-    } else {
-      document.body.classList.add('bg-gray-100');
-      document.body.classList.remove('bg-neutral-900');
-    }
-  }, [darkMode]);
+  const [activeId, setActiveId] = useState('home');
 
   const scrollToSection = (sectionId: string) => {
+    setActiveId(sectionId);
     if (sectionId === 'home') {
       document.documentElement.scrollIntoView({
         behavior: 'smooth',
@@ -123,54 +104,60 @@ export default function NavBar() {
     }
   };
 
-  const handleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
   return (
     <>
-      <motion.nav
-        className='border-2 border-slate-500 flex items-center rounded-full shadow-sm'
-        initial='initial'
-        animate={hidden ? 'hidden' : 'visible'}
-        variants={navVariants}
-      >
-        <div className='flex flex-col items-center justify-center'>
-          <div className='space-y-5'>
-            <DrawCircle title='JM' />
-            {navItems.map((item, index) => {
-              return (
-                <motion.div
-                  key={`${item.id}-${index}`}
-                  className='relative flex justify-center items-center'
-                  initial='rest'
-                  whileHover='hover'
-                >
-                  <motion.span
-                    className='absolute flex justify-center items-center h-full w-full text-gray-400 font-semibold tracking-tight'
-                    variants={hoverVariants}
-                  >
-                    {item.title}
-                  </motion.span>
-                  <button
-                    onClick={() => scrollToSection(item.id)}
-                    className='text-gray-400 hover:text-dark-gray rounded-md px-3 py-2 text-md font-medium'
-                  >
-                    {item.icon}
-                  </button>
-                </motion.div>
-              );
-            })}
-            <ToggleSwitch isOn={darkMode} handleClick={handleDarkMode} />
-          </div>
-        </div>
-      </motion.nav>
+      <AnimatePresence>
+        {!hidden && (
+          <motion.nav
+            key='navbar'
+            className='bg-slate-100 border-2 border-dark-gray flex items-center rounded-full shadow-sm'
+            initial='hidden'
+            animate='visible'
+            exit='hidden'
+            variants={navVariants}
+          >
+            <div className='flex flex-col items-center justify-center h-full rounded-full'>
+              <div className='space-y-4'>
+                <DrawCircle title='JM' />
+                {navItems.map((item, index) => {
+                  return (
+                    <motion.div
+                      key={`${item.id}-${index}`}
+                      className='relative flex justify-center items-center'
+                      initial='rest'
+                      whileHover='hover'
+                    >
+                      <motion.span
+                        className='absolute flex justify-center items-center text-dark-gray font-semibold tracking-wide'
+                        variants={hoverVariants}
+                      >
+                        {item.title}
+                      </motion.span>
+                      <button
+                        onClick={() => scrollToSection(item.id)}
+                        className={`hover:text-dark-gray rounded-md px-3 py-2 text-md font-medium ${
+                          activeId === item.id
+                            ? 'text-dark-gray'
+                            : 'text-gray-400'
+                        }`}
+                      >
+                        {item.icon}
+                      </button>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
 
       <button
-        className='w-6 h-6 absolute top-5 right-4 z-30'
+        className='w-5 h-5 absolute top-5 right-4 z-30'
         onClick={() => setHidden(!hidden)}
       >
         <div
-          className={`w-6 after:content-[''] after:block after:w-full after:h-[2px] after:relative after:rounded-md before:content-[''] before:block before:w-full before:h-[2px] before:relative before:rounded-md
+          className={`w-5 after:content-[''] after:block after:w-full after:h-[2px] after:relative after:rounded-md before:content-[''] before:block before:w-full before:h-[2px] before:relative before:rounded-md
           after:transition-all after:duration-[500ms] before:transition-all before:duration-[500ms]
           after:ease-[cubic-bezier(0.76,0,0.24,1)] before:ease-[cubic-bezier(0.76,0,0.24,1)]
           ${
