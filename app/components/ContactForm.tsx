@@ -5,13 +5,15 @@ export default function ContactForm() {
   const [state, handleSubmit] = useForm(
     process.env.NEXT_PUBLIC_FORMSPREE_URL as string
   );
+  console.log('env:', process.env.NEXT_PUBLIC_FORMSPREE_URL);
+  console.log('state:', state);
+
   if (state.succeeded) {
     return <p>Thanks for joining!</p>;
   }
   return (
     <form
       onSubmit={handleSubmit}
-      method='POST'
       className='w-full border border-slate-300 rounded-md shadow-sm p-6'
     >
       <div className='grid grid-cols-2 gap-5 w-full'>
