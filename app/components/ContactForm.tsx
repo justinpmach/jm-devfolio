@@ -29,7 +29,7 @@ export default function ContactForm() {
               id='name'
               type='name'
               name='name'
-              className='mt-3 max-w-lg w-full h-10 rounded-md shadow-sm border border-gray-200 py-2 px-4 text-gray-700'
+              className='mt-2 max-w-lg w-full h-10 rounded-md shadow-sm border border-gray-200 py-2 px-4 text-gray-700'
             />
           </div>
           <ValidationError prefix='Name' field='name' errors={state.errors} />
@@ -46,7 +46,7 @@ export default function ContactForm() {
               id='email'
               type='email'
               name='email'
-              className='mt-3 max-w-lg w-full h-10 rounded-md shadow-sm border border-gray-200 py-2 px-4 text-gray-700'
+              className='mt-2 max-w-lg w-full h-10 rounded-md shadow-sm border border-gray-200 py-2 px-4 text-gray-700'
             />
           </div>
           <ValidationError prefix='Email' field='email' errors={state.errors} />
@@ -64,7 +64,7 @@ export default function ContactForm() {
             id='message'
             name='message'
             rows={6}
-            className='mt-3 w-full rounded-md shadow-sm border border-gray-200 py-2 px-4 text-gray-700'
+            className='mt-2 w-full rounded-md shadow-sm border border-gray-200 py-2 px-4 text-gray-700'
           />
         </div>
         <ValidationError

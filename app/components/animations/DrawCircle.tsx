@@ -17,19 +17,19 @@ export default function DrawCircle({ title }: { title: string }) {
   return (
     <div className='relative flex justify-center items-center'>
       <motion.svg
-        width='50px'
-        height='50px'
-        viewBox='0 0 100 100'
+        width='100px'
+        height='100px'
+        viewBox='0 0 200 200'
         initial='hidden'
         animate='visible'
       >
         <motion.circle
-          style={{ strokeWidth: '4px' }}
-          cx='50'
-          cy='50'
-          r='30'
+          style={{ strokeWidth: '5px' }}
+          cx='100px'
+          cy='100px'
+          r='50px'
           width='1px'
-          stroke='#4b5563'
+          stroke='#cbd5e1'
           variants={draw}
           custom={1}
         />

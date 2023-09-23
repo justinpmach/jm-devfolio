@@ -51,7 +51,7 @@ export default function RootLayout({
           variants={darkModeVariants}
           custom={darkMode ? 'dark' : 'light'}
         >
-          <ToggleSwitch isOn={darkMode} handleClick={handleDarkMode} />
+          {/* <ToggleSwitch isOn={darkMode} handleClick={handleDarkMode} /> */}
 
           <Header />
           <main>{children}</main>
