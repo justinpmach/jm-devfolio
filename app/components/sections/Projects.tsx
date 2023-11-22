@@ -7,6 +7,7 @@ interface Project {
   id: string;
   title: string;
   src: string;
+  tools: string[];
 }
 
 // Maintained and improved Angular application while simultaneously assisting in a large-scale transition to React and Tailwind
@@ -20,29 +21,34 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 'alphadao',
+    title: 'AlphaDao',
+    src: '/alphadao-web.png',
+    tools: ['Next.js', 'Web3.js', 'Tailwind'],
+  },
+  {
     id: 'dekage',
     title: 'Dekage',
     src: '/dekage-web.png',
+    tools: ['Python', 'Django', 'Bootstrap'],
   },
   {
     id: 'the_missing_piece',
     title: 'The Missing Piece',
     src: '/tmp-web.png',
+    tools: ['Python', 'Django', 'Bootstrap'],
   },
   {
     id: 'iron_grind',
     title: 'IronGrind',
     src: '/Iron-Grind-web.png',
-  },
-  {
-    id: 'alphadao',
-    title: 'AlphaDao',
-    src: '/alphadao-web.png',
+    tools: ['HTML', 'CSS', 'Javascript'],
   },
   {
     id: 'rocketship',
     title: 'RocketShip',
     src: '/RocketShip-web.png',
+    tools: ['C#', 'ASP.NET Core', 'Bootstrap'],
   },
 ];
 
@@ -67,9 +73,21 @@ export default function Projects() {
           <ProjectsCarousel projects={projects} setSelected={setSelected} />
           <div className='flex flex-col items-center justify-center w-full p-7'>
             {selected && (
-              <span className='uppercase text-dark-gray text-xl font-semibold tracking-widest'>
-                {selected?.title}
-              </span>
+              <>
+                <span className='uppercase text-dark-gray text-xl font-semibold tracking-widest'>
+                  {selected?.title}
+                </span>
+                <div className='flex w-full justify-center items-center'>
+                  {selected.tools?.map(t => (
+                    <span
+                      key={`${selected.id}-tools`}
+                      className='text-xs mr-2 ml-2 first-of-type:ml-0 last-of-type:mr-0 border-r border-black pr-2 last-of-type:pr-0 last-of-type:border-0'
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </>
             )}
             {/* <div className='mt-8 border border-green-600 w-full'>Text</div> */}
           </div>
