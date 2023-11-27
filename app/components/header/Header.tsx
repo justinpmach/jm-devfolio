@@ -9,10 +9,8 @@ export default function Header() {
       <div className='fixed top-5 left-4'>
         <DrawCircle title='JM' />
       </div>
-      <div className='h-full z-30'>
-        <Navbar />
-        {/* <TestNav /> */}
-      </div>
+      <Navbar />
+      {/* <TestNav /> */}
     </>
   );
 }

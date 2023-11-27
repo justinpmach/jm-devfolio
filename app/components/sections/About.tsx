@@ -4,10 +4,10 @@ import SlideIn from '../animations/SlideIn';
 export default function About() {
   return (
     <section id='about'>
-      <div className='flex w-full justify-center px-40 gap-8'>
-        <div className='w-2/3 flex flex-col rounded-sm'>
+      <div className='flex flex-col-reverse lg:flex-row w-full items-center justify-center px-20 lg:px-40 gap-8'>
+        <div className='lg:w-2/3 flex flex-col text-center lg:text-left rounded-sm'>
           <SlideIn>
-            <span className='text-6xl font-bold tracking-tighter mb-8'>
+            <span className='text-3xl md:text-4xl lg:text-6xl font-bold tracking-tighter mb-8'>
               About.
             </span>
           </SlideIn>
@@ -18,7 +18,7 @@ export default function About() {
             Highly skilled frontend developer based in
             <br /> Orange County, California.
           </p>
-          <div className='w-2/3'>
+          <div className='lg:w-2/3'>
             {/* <p className='mt-5 text-md'>
             Current Tool Belt: React, Next.js and Tailwind CSS.
           </p> */}
@@ -37,7 +37,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className='w-1/3 relative flex items-center bg-slate-300 rounded-md'>
+        <div className='max-h-[380px] max-w-[380px] lg:w-1/3 relative flex items-center bg-slate-300 rounded-md'>
           <div className='absolute top-28 w-full h-1/4 skew-y-6 bg-gray-100 z-0'></div>
           <div className='h-full w-full flex'>
             <Image
