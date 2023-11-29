@@ -5,12 +5,28 @@ export default function ToolsIcons() {
     return src;
   };
   return (
-    <Image
-      loader={loaderProp}
-      src='https://skillicons.dev/icons?i=html,css,js,ts,react,next,tailwind,sass,mysql,prisma'
-      alt='icon'
-      width={500}
-      height={50}
-    />
+    <div className='grid md:grid-cols-3 gap-8'>
+      <Image
+        loader={loaderProp}
+        src='https://skillicons.dev/icons?i=html,css,js'
+        alt='icon'
+        width={150}
+        height={50}
+      />
+      <Image
+        loader={loaderProp}
+        src='https://skillicons.dev/icons?i=ts,react,angular'
+        alt='icon'
+        width={150}
+        height={50}
+      />
+      <Image
+        loader={loaderProp}
+        src='https://skillicons.dev/icons?i=next,tailwind,mysql'
+        alt='icon'
+        width={150}
+        height={50}
+      />
+    </div>
   );
 }

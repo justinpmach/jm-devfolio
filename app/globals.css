@@ -23,26 +23,26 @@ video {
 }
 @layer base {
   body {
-    @apply min-h-screen;
+    @apply min-h-screen w-full;
   }
 
   main {
     @apply min-h-screen;
   }
   section {
-    @apply text-dark-gray py-24 lg:py-32 xl:py-36 w-full;
+    @apply text-dark-gray py-28 lg:py-36 xl:py-40 w-full;
     /* @apply border border-blue-500; */
   }
 
-  /* #home {
-    @apply h-[calc(100vh)];
+  #home {
+    @apply xl:py-48;
   }
   #about,
   #work,
   #projects,
   #contact {
-    @apply h-[calc(100vh-65px)];
-  } */
+    @apply xl:py-40;
+  }
 
   /* section:last-of-type {
     @apply mb-0;

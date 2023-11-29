@@ -74,7 +74,7 @@ export default function ProjectsCarousel({
   return (
     <div className='relative w-full'>
       <div className='w-full gap-4 flex flex-col items-center'>
-        <div className='relative h-[400px] w-[500px] xl:h-[450px] xl:w-[600px] overflow-hidden shadow-md rounded-sm'>
+        <div className='relative h-[300px] w-[320px] md:h-[400px] md:w-[500px] xl:h-[450px] xl:w-[600px] overflow-hidden shadow-md rounded-sm'>
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={imageCount}

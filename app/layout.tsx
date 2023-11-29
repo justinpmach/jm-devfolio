@@ -45,7 +45,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={mavenPro.className}>
         <motion.div
-          className='relative h-full'
+          className='relative'
           initial='hidden'
           animate='visible'
           variants={darkModeVariants}
