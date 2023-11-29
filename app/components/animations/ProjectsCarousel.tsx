@@ -73,8 +73,8 @@ export default function ProjectsCarousel({
 
   return (
     <div className='relative w-full'>
-      <div className='w-full gap-4 flex items-center'>
-        <div className='relative h-[450px] w-[600px] overflow-hidden shadow-md rounded-sm'>
+      <div className='w-full gap-4 flex flex-col items-center'>
+        <div className='relative h-[400px] w-[500px] xl:h-[450px] xl:w-[600px] overflow-hidden shadow-md rounded-sm'>
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={imageCount}
@@ -104,12 +104,12 @@ export default function ProjectsCarousel({
           </div>
         </div>
 
-        <div className='flex flex-col gap-3'>
+        <div className='flex gap-3'>
           {projects.map((project, index) => (
             <div
               key={project.id}
               onClick={() => skipToImage(index)}
-              className='relative w-[100px] h-[60px] hover:cursor-pointer shadow-md rounded-sm'
+              className='relative w-[70px] h-[40px] lg:w-[100px] lg:h-[60px] hover:cursor-pointer shadow-md rounded-sm'
             >
               <img
                 className={`h-full w-full object-cover object-center rounded-md ${

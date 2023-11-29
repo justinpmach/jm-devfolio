@@ -14,13 +14,13 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className='w-full border border-slate-300 rounded-md shadow-sm p-6'
+      className='lg:col-span-2 w-full border border-slate-300 rounded-md shadow-sm p-6'
     >
       <div className='grid grid-cols-2 gap-5 w-full'>
         <div className='flex flex-col items-start'>
           <label
             htmlFor='email'
-            className='font-semibold tracking-widest uppercase text-gray-400'
+            className='text-xs sm:text-sm lg:text-md font-semibold tracking-widest uppercase text-gray-400'
           >
             Name:
           </label>
@@ -37,7 +37,7 @@ export default function ContactForm() {
         <div className='flex flex-col items-start'>
           <label
             htmlFor='email'
-            className='font-semibold tracking-widest uppercase text-gray-400'
+            className='text-xs sm:text-sm lg:text-md font-semibold tracking-widest uppercase text-gray-400'
           >
             Email Address:
           </label>
@@ -59,7 +59,7 @@ export default function ContactForm() {
         >
           Message:
         </label>
-        <div className='flex justify-center w-full'>
+        <div className='text-xs sm:text-sm lg:text-md flex justify-center w-full'>
           <textarea
             id='message'
             name='message'

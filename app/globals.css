@@ -27,14 +27,14 @@ video {
   }
 
   main {
-    @apply min-h-screen w-full flex flex-col;
+    @apply min-h-screen;
   }
   section {
-    @apply w-full flex flex-col justify-center items-center text-dark-gray mb-10;
+    @apply text-dark-gray py-24 lg:py-32 xl:py-36 w-full;
     /* @apply border border-blue-500; */
   }
 
-  #home {
+  /* #home {
     @apply h-[calc(100vh)];
   }
   #about,
@@ -42,11 +42,11 @@ video {
   #projects,
   #contact {
     @apply h-[calc(100vh-65px)];
-  }
+  } */
 
-  section:last-of-type {
+  /* section:last-of-type {
     @apply mb-0;
-  }
+  } */
 }
 /* Work Section */
 

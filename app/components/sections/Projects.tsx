@@ -58,10 +58,10 @@ export default function Projects() {
   // hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)]
   return (
     <section id='projects'>
-      <div className='relative flex flex-col w-full justify-center px-40 z-0'>
+      <div className='grid gap-8 grid-cols-1 w-full'>
         <SlideIn>
-          <div className='text-right'>
-            <span className='text-6xl font-bold tracking-tighter mb-8'>
+          <div className='text-center'>
+            <span className='text-5xl lg:text-6xl font-bold tracking-tighter mb-8'>
               Projects.
             </span>
             {/* <p className='text-md font-semibold text-gray-500 tracking-wide'>
@@ -69,7 +69,7 @@ export default function Projects() {
             </p> */}
           </div>
         </SlideIn>
-        <div className='flex w-full gap-5 mt-5'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5 px-8 md:px-12 lg:px-20 xl:px-28'>
           <ProjectsCarousel projects={projects} setSelected={setSelected} />
           <div className='flex flex-col items-center justify-center w-full p-7'>
             {selected && (

@@ -47,6 +47,9 @@ const skewVariants: Variants = {
 };
 
 export default function DrawSquareHero() {
+  const loaderProp = ({ src }: { src: string }) => {
+    return src;
+  };
   return (
     <div className='relative flex justify-center items-center'>
       <motion.div
@@ -75,6 +78,7 @@ export default function DrawSquareHero() {
       <div className='absolute flex justify-center items-center '>
         <motion.div variants={imageVariants}>
           <Image
+            loader={loaderProp}
             className='rounded-sm'
             src='/jm-hero-transparent.png'
             width={400}

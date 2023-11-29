@@ -3,7 +3,7 @@ const experience = [
     id: 'tw-fe',
     company: 'Trust & Will',
     title: 'Frontend Engineer',
-    date: 'Jan 2021 - Jan 2023',
+    date: 'Nov 2021 - Jan 2023',
     subtext1:
       'Maintained and improved Angular application while simultaneously assisting in a large-scale transition to React and Tailwind',
     subtext2:
@@ -34,21 +34,18 @@ const experience = [
 
 export default function Timeline() {
   return (
-    <div className='h-full'>
+    <div className=''>
       {experience &&
         experience.map(item => (
           <div
             key={item.id}
-            className="relative h-80 after:flex after:justify-center after:content-[''] after:absolute after:top-0 after:w-1 after:bg-white after:h-full after:left-[50%] after:-ml-[2px] hover:opacity-100 opacity-50 transition-all"
+            className="relative h-76 lg:h-80 after:flex xl:after:justify-center xl:after:content-[''] xl:after:absolute xl:after:top-0 xl:after:w-1 xl:after:bg-white after:h-full xl:after:left-[50%] after:-ml-[2px] lg:hover:opacity-100 lg:opacity-50 transition-all"
           >
-            <div
-              className="relative w-full flex items-start justify-center after:content-[''] after:absolute after:w-3 after:h-3  after:bg-white after:border after:border-dark-gray after:shadow-lg
-            after:rounded-full after:z-10 "
-            >
-              <div className='w-[50%] absolute left-[50%] p-4'>
-                <div className='flex'>
-                  <div className='w-1/5'>{item.date}</div>
-                  <div className='w-4/5 flex flex-col bg-gray-50 shadow-md rounded-md py-4 px-8'>
+            <div className="relative w-full flex items-start justify-center xl:after:content-[''] xl:after:absolute xl:after:w-3 xl:after:h-3 xl:after:bg-white xl:after:border xl:after:border-dark-gray after:shadow-lg xl:after:rounded-full xl:after:z-10">
+              <div className='xl:w-[50%] xl:absolute xl:left-[50%] p-4'>
+                <div className='flex flex-col lg:flex-row'>
+                  <div className='lg:w-1/5'>{item.date}</div>
+                  <div className='lg:w-4/5 flex flex-col bg-gray-50 shadow-md rounded-md py-4 px-8'>
                     <span className='text-xl text-dark-gray tracking-tight mb-3'>
                       {item.title} &#x2022; {item.company}
                     </span>

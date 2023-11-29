@@ -10,10 +10,10 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload';
 export default function Contact() {
   return (
     <section id='contact'>
-      <div className='flex flex-col w-full justify-center py-10 px-40'>
-        <div className='w-full flex flex-col'>
+      <div className='grid gap-8 grid-cols-1 w-full'>
+        <div className='w-full text-center flex flex-col'>
           <SlideIn>
-            <span className='text-6xl font-bold tracking-tighter'>
+            <span className='text-5xl lg:text-6xl font-bold tracking-tighter'>
               Contact.
             </span>
           </SlideIn>
@@ -21,28 +21,28 @@ export default function Contact() {
             Send me a message!
           </span>
         </div>
-        <div className='flex w-full mt-8 justify-between gap-10'>
+        <div className='grid gap-8 grid-cols-1 lg:grid-cols-3 justify-center px-8 md:px-12 lg:px-20 xl:px-28'>
           <ContactForm />
-          <div className='w-2/5 flex flex-col space-y-9 justify-center items-center text-xs font-semibold uppercase tracking-wide text-gray-400 border border-slate-300 rounded-md shadow-sm'>
+          <div className='lg:col-span-1 flex lg:flex-col space-x-8 lg:space-x-0 py-4 lg:py-0 lg:space-y-9 justify-center items-center text-xs font-semibold uppercase tracking-wide text-gray-400 border border-slate-300 rounded-md shadow-sm'>
             <a
               href='https://github.com/justinpmach'
               className='flex flex-col items-center justify-center hover:text-dark-gray transition-all'
             >
-              <FontAwesomeIcon icon={faGithub} className='w-8 h-8 mb-2' />
+              <FontAwesomeIcon icon={faGithub} className='w-8 h-8 lg:mb-2' />
               Github
             </a>
             <a
               href='https://www.linkedin.com/in/justinpmach/'
               className='flex flex-col items-center justify-center hover:text-dark-gray transition-all'
             >
-              <FontAwesomeIcon icon={faLinkedin} className='w-8 h-8 mb-2' />
+              <FontAwesomeIcon icon={faLinkedin} className='w-8 h-8 lg:mb-2' />
               LinkedIn
             </a>
             <a
               href='mailto:justin.mach.dev@gmail.com'
               className='flex flex-col items-center justify-center hover:text-dark-gray transition-all'
             >
-              <FontAwesomeIcon icon={faEnvelope} className='w-8 h-8 mb-2' />
+              <FontAwesomeIcon icon={faEnvelope} className='w-8 h-8 lg:mb-2' />
               Email
             </a>
             <a
@@ -50,7 +50,7 @@ export default function Contact() {
               target='_blank'
               className='flex flex-col items-center justify-center hover:text-dark-gray transition-all'
             >
-              <FontAwesomeIcon icon={faDownload} className='w-8 h-8 mb-2' />
+              <FontAwesomeIcon icon={faDownload} className='w-8 h-8 lg:mb-2' />
               Resume
             </a>
           </div>

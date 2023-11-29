@@ -5,9 +5,10 @@ import TextReveal from '../animations/TextReveal';
 export default function Hero() {
   return (
     <section id='home'>
-      <div className='flex flex-col lg:flex-row w-full justify-center lg:justify-evenly py-20'>
+      <div className='grid gap-8 lg:grid-cols-2 w-full lg:px-20 xl:px-28'>
+        {/* Hero Title */}
         <div className='flex flex-col text-center lg:text-left lg:justify-between rounded-sm'>
-          <span className='text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter mb-5 lg:mb-0'>
+          <span className='text-5xl md:text-8xl xl:text-9xl font-bold tracking-tighter mb-5 lg:mb-0'>
             <TextReveal textFirst='Frontend' textSecond='Developer.' />
             <br />
           </span>
@@ -20,7 +21,7 @@ export default function Hero() {
             aesthetic designs, intuitive apps, & clean code.
           </p>
         </div>
-
+        {/* Hero Image */}
         <DrawSquareHero />
       </div>
     </section>
