@@ -46,8 +46,9 @@ export default function Contact() {
               Email
             </a>
             <a
-              href='/public/Resume_Finished.pdf'
+              href='2023_Resume.pdf'
               target='_blank'
+              rel='noopener noreferrer'
               className='flex flex-col items-center justify-center hover:text-dark-gray transition-all'
             >
               <FontAwesomeIcon icon={faDownload} className='w-8 h-8 lg:mb-2' />
