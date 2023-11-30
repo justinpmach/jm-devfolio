@@ -184,24 +184,20 @@ export default function NavBar() {
       {/* Mobile Nav */}
       <div className='block lg:hidden text-dark-gray z-50'>
         {!hidden && (
-          <div className='z-40 fixed w-full min-h-screen bg-slate-400 flex flex-col items-center justify-center h-full'>
-            <div className='space-y-4'>
+          <div className='py-8 z-40 fixed w-full min-h-screen bg-gray-100 flex flex-col h-full'>
+            <div className='space-y-8 z-50'>
               {navItems.map((item, index) => {
                 return (
                   <motion.div
                     key={`${item.id}-${index}`}
                     className='relative flex justify-center items-center'
                     initial='rest'
-                    whileHover='hover'
                   >
-                    <motion.span
-                      className='absolute flex justify-center items-center text-dark-gray font-semibold tracking-wide'
-                      variants={hoverVariants}
-                    >
-                      {item.title}
-                    </motion.span>
                     <button
-                      onClick={() => scrollToSection(item.id)}
+                      onClick={() => {
+                        setHidden(true);
+                        scrollToSection(item.id);
+                      }}
                       className={`hover:text-dark-gray rounded-md px-3 py-2 text-md font-medium ${
                         activeId === item.id
                           ? 'text-dark-gray'
@@ -210,6 +206,9 @@ export default function NavBar() {
                     >
                       {item.icon}
                     </button>
+                    <span className='flex justify-center items-center text-dark-gray font-semibold tracking-wide'>
+                      {item.title}
+                    </span>
                   </motion.div>
                 );
               })}
