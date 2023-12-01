@@ -4,6 +4,7 @@ import { wrap } from '@popmotion/popcorn';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
+import Image from 'next/image';
 
 interface Project {
   id: string;
@@ -104,19 +105,21 @@ export default function ProjectsCarousel({
           </div>
         </div>
 
-        <div className='flex gap-3'>
+        <div className='flex gap-3 w-full'>
           {projects.map((project, index) => (
             <div
               key={project.id}
               onClick={() => skipToImage(index)}
-              className='relative w-[70px] h-[40px] lg:w-[100px] lg:h-[60px] hover:cursor-pointer shadow-md rounded-sm'
+              className='relative w-full h-16 hover:cursor-pointer shadow-md rounded-sm'
             >
-              <img
-                className={`h-full w-full object-cover object-center rounded-md ${
+              <Image
+                className={`object-cover object-center rounded-md ${
                   index === activeImageIndex ? 'opacity-100' : 'opacity-50'
                 }`}
                 src={project.src}
-                alt='Project'
+                alt='Project Carousel Images'
+                fill={true}
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               />
               <div
                 className={`absolute top-0 left-0 h-full w-full pointer-events-none scale-x-0 origin-left opacity-25 bg-gray-800 transition duration-[1000ms] ease-[cubic-bezier(0.56, 0.03, 0.12, 1.04)] transform rounded-sm ${

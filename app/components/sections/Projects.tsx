@@ -35,7 +35,7 @@ const projects: Project[] = [
   {
     id: 'the_missing_piece',
     title: 'The Missing Piece',
-    src: '/tmp-web.png',
+    src: '/missing-piece.png',
     tools: ['Python', 'Django', 'Bootstrap'],
   },
   {
