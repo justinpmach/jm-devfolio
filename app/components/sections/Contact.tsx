@@ -17,7 +17,7 @@ export default function Contact() {
               Contact.
             </span>
           </SlideIn>
-          <span className='text-md font-semibold text-gray-500 tracking-wide mt-4'>
+          <span className='text-md font-semibold text-gray-550 tracking-wide mt-4'>
             Send me a message!
           </span>
         </div>

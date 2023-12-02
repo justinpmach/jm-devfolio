@@ -11,7 +11,7 @@ export default function Work() {
             <span className='text-5xl lg:text-6xl font-bold tracking-tighter mb-8'>
               Work
             </span>
-            <p className='text-md font-semibold text-gray-500 tracking-wide'>
+            <p className='text-md font-semibold text-gray-550 tracking-wide'>
               Experience.
             </p>
           </div>

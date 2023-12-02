@@ -11,7 +11,7 @@ export default function About() {
               About.
             </span>
           </SlideIn>
-          <p className='text-md font-semibold text-gray-500 tracking-wide'>
+          <p className='text-md font-semibold text-gray-550 tracking-wide'>
             Dog dad. Gamer. Tech Fiend.
           </p>
           <p className='mt-3 text-xl'>

@@ -10,6 +10,9 @@ const config: Config = {
     extend: {
       colors: {
         'dark-gray': '#333333',
+        gray: {
+          '550': '#555662',
+        },
       },
       backgroundImage: {},
     },

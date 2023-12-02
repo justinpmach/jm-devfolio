@@ -19,7 +19,7 @@ export default function ContactForm() {
       <div className='grid grid-cols-2 gap-5 w-full'>
         <div className='flex flex-col items-start'>
           <label
-            htmlFor='email'
+            htmlFor='name'
             className='text-xs sm:text-sm lg:text-md font-semibold tracking-widest uppercase text-gray-400'
           >
             Name:
@@ -27,7 +27,7 @@ export default function ContactForm() {
           <div className='flex justify-center w-full'>
             <input
               id='name'
-              type='name'
+              type='text'
               name='name'
               className='mt-2 max-w-lg w-full h-10 rounded-md shadow-sm border border-gray-200 py-2 px-4 text-gray-700'
             />

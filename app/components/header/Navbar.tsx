@@ -198,8 +198,8 @@ export default function NavBar() {
                     initial='rest'
                   >
                     <button
-                      id={`nav-${item.id}-btn`}
-                      aria-label={`Nav button for ${item.id}`}
+                      id={`mobile-nav-${item.id}-btn`}
+                      aria-label={`Mobile Nav button for ${item.id}`}
                       onClick={() => {
                         setHidden(true);
                         scrollToSection(item.id);

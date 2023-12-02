@@ -17,7 +17,7 @@ export default function Hero() {
               Justin Mach
             </span>
           </SlideIn>
-          <p className='text-center lg:text-right text-sm md:text-lg lg:text-xl text-gray-500 tracking-tighter font-semibold my-5 lg:my-0'>
+          <p className='text-center lg:text-right text-sm md:text-lg lg:text-xl text-gray-550 tracking-tighter font-semibold my-5 lg:my-0'>
             aesthetic designs, intuitive apps, & clean code.
           </p>
         </div>
