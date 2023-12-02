@@ -1,5 +1,12 @@
 'use client';
-import { motion, Variants, useAnimation, useInView } from 'framer-motion';
+import {
+  LazyMotion,
+  domAnimation,
+  m,
+  Variants,
+  useAnimation,
+  useInView,
+} from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 const slideInVariants: Variants = {
@@ -31,14 +38,12 @@ export default function SlideIn({ children }: { children: React.ReactNode }) {
     }
   }, [isInView]);
   return (
-    <div ref={ref} className='relative'>
-      <motion.div
-        initial='hidden'
-        animate={controls}
-        variants={slideInVariants}
-      >
-        {children}
-      </motion.div>
-    </div>
+    <LazyMotion features={domAnimation}>
+      <div ref={ref} className='relative'>
+        <m.div initial='hidden' animate={controls} variants={slideInVariants}>
+          {children}
+        </m.div>
+      </div>
+    </LazyMotion>
   );
 }

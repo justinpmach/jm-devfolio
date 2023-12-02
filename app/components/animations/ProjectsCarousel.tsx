@@ -96,10 +96,18 @@ export default function ProjectsCarousel({
             />
           </AnimatePresence>
           <div className='absolute bottom-5 w-full flex justify-between mt-3 px-8 text-black opacity-25'>
-            <button onClick={() => swipeToImage(-1)}>
+            <button
+              id='project-img-back-btn'
+              aria-label='Back button for project images'
+              onClick={() => swipeToImage(-1)}
+            >
               <FontAwesomeIcon icon={faChevronLeft} />
             </button>
-            <button onClick={() => swipeToImage(1)}>
+            <button
+              id='project-img-next-btn'
+              aria-label='Next button for project images'
+              onClick={() => swipeToImage(1)}
+            >
               <FontAwesomeIcon icon={faChevronRight} />
             </button>
           </div>
