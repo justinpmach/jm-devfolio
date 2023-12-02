@@ -165,7 +165,11 @@ export default function NavBar() {
                           {item.title}
                         </motion.span>
                         <button
-                          id={`nav-${item.id}-btn`}
+                          id={
+                            activeId === item.id
+                              ? `nav-${item.id}-btn-active`
+                              : `nav-${item.id}-btn`
+                          }
                           aria-label={`Nav button for ${item.id}`}
                           onClick={() => scrollToSection(item.id)}
                           className={`hover:text-dark-gray rounded-md px-3 py-2 text-md font-medium ${
@@ -198,7 +202,11 @@ export default function NavBar() {
                     initial='rest'
                   >
                     <button
-                      id={`mobile-nav-${item.id}-btn`}
+                      id={
+                        activeId === item.id
+                          ? `mobile-nav-${item.id}-btn-active`
+                          : `mobile-nav-${item.id}-btn`
+                      }
                       aria-label={`Mobile Nav button for ${item.id}`}
                       onClick={() => {
                         setHidden(true);
