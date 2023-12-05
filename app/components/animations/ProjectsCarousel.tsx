@@ -116,7 +116,7 @@ export default function ProjectsCarousel({
         <div className='flex gap-3 w-full'>
           {projects.map((project, index) => (
             <div
-              key={project.id}
+              key={`spotlight-${project.id}`}
               onClick={() => skipToImage(index)}
               className='relative w-full h-16 hover:cursor-pointer shadow-md rounded-sm'
             >

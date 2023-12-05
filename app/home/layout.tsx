@@ -2,9 +2,11 @@
 import { useEffect, useState } from 'react';
 import { Variants, motion } from 'framer-motion';
 
-import './globals.css';
+import '../globals.css';
 import { Maven_Pro } from 'next/font/google';
-import ToggleSwitch from './components/ToggleSwitch';
+import ToggleSwitch from '../components/ToggleSwitch';
+import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
 
 const mavenPro = Maven_Pro({ subsets: ['latin'] });
 
@@ -36,20 +38,22 @@ export default function RootLayout({
     setDarkMode(!darkMode);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <html lang='en'>
-      <body>
-        <motion.div
-          className='relative'
-          initial='hidden'
-          animate='visible'
-          variants={darkModeVariants}
-          custom={darkMode ? 'dark' : 'light'}
-        >
-          {/* <ToggleSwitch isOn={darkMode} handleClick={handleDarkMode} /> */}
-          <main>{children}</main>
-        </motion.div>
-      </body>
-    </html>
+    <motion.div
+      className='relative'
+      initial='hidden'
+      animate='visible'
+      variants={darkModeVariants}
+      custom={darkMode ? 'dark' : 'light'}
+    >
+      <ToggleSwitch isOn={darkMode} handleClick={handleDarkMode} />
+
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </motion.div>
   );
 }

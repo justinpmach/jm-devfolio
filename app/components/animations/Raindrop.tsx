@@ -15,7 +15,7 @@ export default function Raindrop({ rainProps }: { rainProps: RainProps }) {
       initial={{ x: rainProps.increment }}
       className={`absolute w-[15px] h-[120px] pointer-events-none z-40`}
       animate={{
-        y: ['-10vh', '0vh', '90vh', '90vh'],
+        y: ['0vh', '0vh', '90vh', '90vh'],
         opacity: 1,
       }}
       transition={{

@@ -2,22 +2,22 @@
 import { useState } from 'react';
 import Raindrop from '../components/animations/Raindrop';
 
-export default function Rain() {
+export default function Rain({ setAllowEnter }: { setAllowEnter: Function }) {
   const streamCount = 99;
-  const [toggleRain, setToggleRain] = useState(false);
+  const [toggleRain] = useState(false);
 
   return (
     <div
       id='rain'
-      className='absolute left-0 w-full h-full m-0 overflow-hidden bg-gradient-to-b from-slate-800 to-slate-900 bg-opacity-10 flex justify-center'
+      className='absolute left-0 w-full h-full m-0 overflow-hidden flex justify-center z-0'
     >
-      <button
-        onClick={() => setToggleRain(!toggleRain)}
+      {/* <button
+        onClick={() => setAllowEnter(!toggleRain)}
         className='absolute top-40 left-0 w-8 h-8 rounded-full border border-white text-white'
       >
         Rain
-      </button>
-      {toggleRain &&
+      </button> */}
+      {!toggleRain &&
         new Array(streamCount).fill({}).map((_, i) => (
           <div key={`${i}-rain-drop`} className='w-full h-full'>
             <Raindrop
