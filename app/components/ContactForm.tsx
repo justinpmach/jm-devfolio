@@ -5,8 +5,6 @@ export default function ContactForm() {
   const [state, handleSubmit] = useForm(
     process.env.NEXT_PUBLIC_FORMSPREE_URL as string
   );
-  console.log('env:', process.env.NEXT_PUBLIC_FORMSPREE_URL);
-  console.log('state:', state);
 
   if (state.succeeded) {
     return <p>Thanks for joining!</p>;
