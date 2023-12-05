@@ -1,8 +1,7 @@
 'use client';
 import { useState } from 'react';
-import SlideIn from '../components/animations/SlideIn';
-import ProjectsCarousel from '../components/animations/ProjectsCarousel';
-import Timeline from '../components/Timeline';
+
+import Raindrop from '../components/animations/Raindrop';
 
 interface Project {
   id: string;
@@ -52,36 +51,53 @@ const projects: Project[] = [
   },
 ];
 
+interface RainProps {
+  increment: number;
+  duration: number;
+  delay: number;
+  bottom: number;
+}
+
 export default function Testing() {
-  const [selected, setSelected] = useState<Project | null>(projects[0]);
+  const streamCount = 99;
+  const [toggleRain, setToggleRain] = useState(false);
 
   // hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)]
+  let randomFive = Math.floor(Math.random() * (5 - 2 + 1) + 2);
+  let randomHunnid = Math.floor(Math.random() * (98 - 1 + 1) + 1);
   return (
-    <section id='testing'>
-      <div className='relative flex flex-col w-full justify-center px-40 z-0 h-full'>
-        <SlideIn>
-          <div className='text-right'>
-            <span className='text-6xl font-bold tracking-tighter mb-8'>
-              Experience.
-            </span>
-            <p className='text-md font-semibold text-gray-500 tracking-wide'>
-              Projects
-            </p>
+    <div
+      id='testing'
+      className='absolute left-0 w-full h-full m-0 overflow-hidden bg-gradient-to-b from-slate-800 to-slate-900 flex justify-center'
+    >
+      <button
+        onClick={() => setToggleRain(!toggleRain)}
+        className='absolute bottom-40 left-0 w-8 h-8 rounded-full border border-white text-white'
+      >
+        Rain
+      </button>
+      {toggleRain &&
+        new Array(streamCount).fill({}).map((_, i) => (
+          <div key={`${i}-rain-drop`} className='w-full h-full'>
+            <Raindrop
+              key={`${i}-rain-drop`}
+              rainProps={{
+                increment: i + Math.floor(Math.random() * (5 - 2 + 1) + 2),
+                delay: Number(
+                  '0.' + Math.floor(Math.random() * (98 - 1 + 1) + 1).toString()
+                ),
+                duration: Number(
+                  '1.' + Math.floor(Math.random() * (98 - 1 + 1) + 1).toString()
+                ),
+                bottom:
+                  Math.floor(Math.random() * (5 - 2 + 1) + 2) +
+                  Math.floor(Math.random() * (5 - 2 + 1) + 2) -
+                  1 +
+                  90,
+              }}
+            />
           </div>
-        </SlideIn>
-        <div className='w-full mt-5 h-full'>
-          <Timeline />
-          {/* <ProjectsCarousel projects={projects} setSelected={setSelected} />
-          <div className='flex flex-col items-end justify-center w-full p-7'>
-            {selected && (
-              <span className='uppercase font-md tracking-widest'>
-                {selected?.title}
-              </span>
-            )}
-            <div className='mt-8 border border-green-600 w-full'>Text</div>
-          </div> */}
-        </div>
-      </div>
-    </section>
+        ))}
+    </div>
   );
 }

@@ -10,14 +10,16 @@ import Work from './components/sections/Work';
 export const metadata: Metadata = {
   title: 'Justin Mach Dev',
   description: 'Frontend Developer',
+  icons: {
+    icon: '/favicon.ico',
+  },
+  // icons: [],
 };
 
 export default function Home() {
   return (
     <>
-      <FadeInView>
-        <Hero />
-      </FadeInView>
+      <Hero />
       <Tools />
       <About />
       <Work />
