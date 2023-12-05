@@ -1,12 +1,11 @@
 'use client';
 import { AnimatePresence, Variants, motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons/faAddressCard';
 import { faHouseChimney } from '@fortawesome/free-solid-svg-icons/faHouseChimney';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons/faLaptopCode';
 import { faAt } from '@fortawesome/free-solid-svg-icons/faAt';
-import DrawCircle from '../animations/DrawCircle';
 import { faGear } from '@fortawesome/free-solid-svg-icons/faGear';
 import { faDumbbell } from '@fortawesome/free-solid-svg-icons/faDumbbell';
 
@@ -104,6 +103,26 @@ const hoverVariants = {
 export default function NavBar() {
   const [hidden, setHidden] = useState(false);
   const [activeId, setActiveId] = useState('home');
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' && window.innerWidth < 1024
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      // setIsMobile(window.innerWidth < 1024);
+      if (window.innerWidth < 1024) {
+        setHidden(true);
+      }
+    }
+
+    if (typeof window !== 'undefined') {
+      handleResize();
+    }
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMobile]);
 
   const scrollToSection = (sectionId: string) => {
     setActiveId(sectionId);
@@ -190,16 +209,15 @@ export default function NavBar() {
         </AnimatePresence>
       </div>
       {/* Mobile Nav */}
-      <div className='block lg:hidden text-dark-gray z-50'>
+      <div className='block lg:hidden text-dark-gray'>
         {!hidden && (
-          <div className='py-8 z-40 fixed w-full min-h-screen bg-gray-100 flex flex-col h-full'>
+          <div className='fixed top-0 py-16 z-40 w-full min-h-screen bg-gray-100 flex flex-col'>
             <div className='space-y-8 z-50'>
               {navItems.map((item, index) => {
                 return (
                   <motion.div
                     key={`${item.id}-${index}`}
                     className='relative flex justify-center items-center'
-                    initial='rest'
                   >
                     <button
                       id={
@@ -218,11 +236,9 @@ export default function NavBar() {
                           : 'text-gray-400'
                       }`}
                     >
-                      {item.icon}
+                      {item.icon}{' '}
+                      <span className='tracking-wide ml-2'>{item.title}</span>
                     </button>
-                    <span className='flex justify-center items-center text-dark-gray font-semibold tracking-wide'>
-                      {item.title}
-                    </span>
                   </motion.div>
                 );
               })}

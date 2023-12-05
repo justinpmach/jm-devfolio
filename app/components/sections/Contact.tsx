@@ -26,21 +26,21 @@ export default function Contact() {
           <div className='lg:col-span-1 flex lg:flex-col space-x-8 lg:space-x-0 py-4 lg:py-0 lg:space-y-9 justify-center items-center text-xs font-semibold uppercase tracking-wide text-gray-400 border border-slate-300 rounded-md shadow-sm'>
             <a
               href='https://github.com/justinpmach'
-              className='flex flex-col items-center justify-center hover:text-dark-gray transition-all'
+              className='flex flex-col items-center justify-center hover:text-gray-550 transition-all'
             >
               <FontAwesomeIcon icon={faGithub} className='w-8 h-8 lg:mb-2' />
               Github
             </a>
             <a
               href='https://www.linkedin.com/in/justinpmach/'
-              className='flex flex-col items-center justify-center hover:text-dark-gray transition-all'
+              className='flex flex-col items-center justify-center hover:text-gray-550 transition-all'
             >
               <FontAwesomeIcon icon={faLinkedin} className='w-8 h-8 lg:mb-2' />
               LinkedIn
             </a>
             <a
               href='mailto:justin.mach.dev@gmail.com'
-              className='flex flex-col items-center justify-center hover:text-dark-gray transition-all'
+              className='flex flex-col items-center justify-center hover:text-gray-550 transition-all'
             >
               <FontAwesomeIcon icon={faEnvelope} className='w-8 h-8 lg:mb-2' />
               Email
@@ -49,7 +49,7 @@ export default function Contact() {
               href='2023_Resume.pdf'
               target='_blank'
               rel='noopener noreferrer'
-              className='flex flex-col items-center justify-center hover:text-dark-gray transition-all'
+              className='flex flex-col items-center justify-center hover:text-gray-550 transition-all'
             >
               <FontAwesomeIcon icon={faDownload} className='w-8 h-8 lg:mb-2' />
               Resume

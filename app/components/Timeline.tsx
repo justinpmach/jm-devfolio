@@ -44,14 +44,12 @@ export default function Timeline() {
             <div className="relative w-full flex items-start justify-center xl:after:content-[''] xl:after:absolute xl:after:w-3 xl:after:h-3 xl:after:bg-white xl:after:border xl:after:border-dark-gray after:shadow-lg xl:after:rounded-full xl:after:z-10">
               <div className='xl:w-[50%] xl:absolute xl:left-[50%] p-4'>
                 <div className='flex flex-col lg:flex-row'>
-                  <div className='lg:w-1/5'>{item.date}</div>
-                  <div className='lg:w-4/5 flex flex-col bg-gray-50 shadow-md rounded-md py-4 px-8'>
-                    <span className='text-xl text-dark-gray tracking-tight mb-3'>
+                  <div className='lg:w-1/5 text-gray-550'>{item.date}</div>
+                  <div className='lg:w-4/5 flex flex-col bg-gray-50 text-gray-550 shadow-md rounded-md py-4 px-8'>
+                    <span className='text-xl tracking-tight mb-3'>
                       {item.title} &#x2022; {item.company}
                     </span>
-                    <span className='text-md text-dark-gray tracking-wide'>
-                      {item.title}
-                    </span>
+                    <span className='text-md tracking-wide'>{item.title}</span>
                     <ul className='list-disc'>
                       <li className='text-sm mb-2'>{item.subtext1}</li>
                       <li className='text-sm mb-2'>{item.subtext2}</li>
