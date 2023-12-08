@@ -9,7 +9,7 @@ export default function Rain({ setAllowEnter }: { setAllowEnter: Function }) {
   return (
     <div
       id='rain'
-      className='absolute left-0 w-full h-full m-0 overflow-hidden flex justify-center z-0'
+      className='fixed left-0 w-full h-full m-0 overflow-hidden flex justify-center z-0'
     >
       {/* <button
         onClick={() => setAllowEnter(!toggleRain)}

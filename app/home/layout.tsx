@@ -22,16 +22,12 @@ const darkModeVariants: Variants = {
   visible: custom => ({
     // clipPath: 'inset(0% 0% 0% 0% rounded 200px )',
     color: custom === 'dark' ? '#fff' : '#333333',
-    backgroundColor: custom === 'dark' ? '#171717' : '#f1f5f9',
+    backgroundColor: custom === 'dark' ? '#000' : '#f1f5f9',
     opacity: 1,
   }),
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   const [darkMode, setDarkMode] = useState(false);
 
   const handleDarkMode = () => {

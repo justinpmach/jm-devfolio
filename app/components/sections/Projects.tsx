@@ -78,14 +78,15 @@ export default function Projects() {
                   {selected?.title}
                 </span>
                 <div className='flex w-full justify-center items-center'>
-                  {selected.tools?.map(t => (
-                    <span
-                      key={`${selected.id}-tools`}
-                      className='text-xs mr-2 ml-2 first-of-type:ml-0 last-of-type:mr-0 border-r border-black pr-2 last-of-type:pr-0 last-of-type:border-0'
-                    >
-                      {t}
-                    </span>
-                  ))}
+                  <span className='text-xs mr-2 ml-2 first-of-type:ml-0 last-of-type:mr-0 border-r border-black pr-2 last-of-type:pr-0 last-of-type:border-0'>
+                    {selected?.tools?.[0]}
+                  </span>
+                  <span className='text-xs mr-2 ml-2 first-of-type:ml-0 last-of-type:mr-0 border-r border-black pr-2 last-of-type:pr-0 last-of-type:border-0'>
+                    {selected?.tools?.[1]}
+                  </span>
+                  <span className='text-xs mr-2 ml-2 first-of-type:ml-0 last-of-type:mr-0 border-r border-black pr-2 last-of-type:pr-0 last-of-type:border-0'>
+                    {selected?.tools?.[2]}
+                  </span>
                 </div>
               </>
             )}

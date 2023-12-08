@@ -4,8 +4,8 @@ import SlideIn from '../animations/SlideIn';
 export default function About() {
   return (
     <section id='about'>
-      <div className='grid gap-8 lg:grid-cols-2 w-full px-8 md:px-12 lg:px-20 xl:px-28'>
-        <div className='row-start-2 lg:row-start-1 flex flex-col text-center lg:text-left rounded-sm'>
+      <div className='grid gap-8 justify-center items-center w-full px-8 md:px-12 lg:px-20 xl:px-28'>
+        <div className='flex flex-col text-center lg:text-left rounded-sm'>
           <SlideIn>
             <span className='text-5xl lg:text-6xl font-bold tracking-tighter mb-8'>
               About.
@@ -36,7 +36,7 @@ export default function About() {
             </p>
           </div>
         </div>
-        <div className='row-start-1 lg:row-start-1 relative flex items-center justify-center w-full'>
+        {/* <div className='row-start-1 lg:row-start-1 relative flex items-center justify-center w-full'>
           <div className='w-full flex items-center justify-center'>
             <div className='absolute top-28 w-full h-1/4 skew-y-6 bg-gray-100 z-10'></div>
             <div className='absolute bg-slate-300 w-[300px] h-[400px] md:w-[380px] md:h-[400px] lg:w-[400px] lg:h-[450px]'></div>
@@ -48,7 +48,7 @@ export default function About() {
               alt='Profile picture of Justin'
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -6,11 +6,36 @@
   font-family: 'shogun';
   src: url('/fonts/ShogunsClan.ttf');
 }
+@font-face {
+  font-family: 'japan';
+  src: url('/fonts/Japanese.ttf');
+}
+
+/* :root {
+  --glow-color-light-blue: hsl(186 100% 69%);
+  --glow-color-pink: hsl(307 69% 39%);
+} */
+
+#glowing-btn {
+  color: var(--glow-color-light-blue);
+  /* perspective: 2em; */
+  border: 0.15em solid var(--glow-color-light-blue);
+  /* box-shadow: 0 0 2em 0.2em var(--glow-color-light-blue); */
+  box-shadow: inset 0px 0px 0.2em 0px var(--glow-color-light-blue);
+}
+.glowing-vert-title {
+  color: var(--glow-color-pink);
+  border: 0.5em solid var(--glow-color-pink);
+}
 
 /* In your css file where you want to use the font */
-.shogun {
+/* .shogun {
   font-family: 'shogun';
 }
+
+.japan {
+  font-family: 'japan';
+} */
 
 *,
 *::before,
@@ -31,6 +56,16 @@ video {
   display: block;
   max-width: 100%;
 }
+
+/* .container {
+  background: url(/japan-city-street.png) center/cover;
+}
+.content {
+  background: url(/japan-city-street.png) center/cover;
+  background-clip: content-box;
+  padding: 2rem;
+  box-sizing: border-box;
+} */
 @layer base {
   body {
     @apply min-h-screen w-full;

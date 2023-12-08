@@ -45,7 +45,11 @@ export default function ProjectsCarousel({
 
   const swipeToImage = (swipeDirection: number) => {
     // TODO: FIX INDEX ISSUE
-    setSelected(projects[imageCount + 1]);
+    if (imageCount + swipeDirection < projects.length) {
+      setSelected(projects[imageCount + swipeDirection]);
+    } else {
+      setSelected(projects[0]);
+    }
     setImageCount([imageCount + swipeDirection, swipeDirection]);
   };
 

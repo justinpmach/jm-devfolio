@@ -15,19 +15,25 @@ export default function Raindrop({ rainProps }: { rainProps: RainProps }) {
       initial={{ x: rainProps.increment }}
       className={`absolute w-[15px] h-[120px] pointer-events-none z-40`}
       animate={{
-        y: ['0vh', '0vh', '90vh', '90vh'],
+        y: [null, '0vh', '80vh', '80vh'],
         opacity: 1,
       }}
       transition={{
         repeat: Infinity,
         delay: rainProps.delay,
         duration: rainProps.duration,
+        times: [
+          0,
+          rainProps.duration / 4,
+          rainProps.duration / 2,
+          rainProps.duration,
+        ],
       }}
     >
       <motion.div
-        className='w-[1px] h-[60%] ml-[7px] bg-gradient-to-b from-white bg-opacity-25'
+        className='w-[1px] h-[60%] ml-[7px] bg-gradient-to-b from-white'
         animate={{
-          opacity: [0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
+          opacity: [0, 0, 0, 0, 0.5, 0.25, 0, 0, 0, 0],
         }}
         transition={{
           repeat: Infinity,
@@ -36,9 +42,9 @@ export default function Raindrop({ rainProps }: { rainProps: RainProps }) {
         }}
       />
       <motion.div
-        className='w-[15px] h-[10px] border-t-dotted border-t-2 border-white rounded-full z-30 border-opacity-50'
+        className='w-[15px] h-[10px] border-dotted border-t-2 border-white rounded-full z-30 border-opacity-50'
         animate={{
-          opacity: [null, 0, 0, 0, 0, 0, 1, 0.5, 0],
+          opacity: [0, 0, 0, 1, 0.5, 0],
           scale: [0, 0, 0, 1, 1.5],
         }}
         transition={{

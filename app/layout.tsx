@@ -4,7 +4,8 @@ import { Variants, motion } from 'framer-motion';
 
 import './globals.css';
 import { Maven_Pro } from 'next/font/google';
-import ToggleSwitch from './components/ToggleSwitch';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 
 const mavenPro = Maven_Pro({ subsets: ['latin'] });
 
@@ -20,7 +21,7 @@ const darkModeVariants: Variants = {
   visible: custom => ({
     // clipPath: 'inset(0% 0% 0% 0% rounded 200px )',
     color: custom === 'dark' ? '#fff' : '#333333',
-    backgroundColor: custom === 'dark' ? '#171717' : '#f1f5f9',
+    backgroundColor: custom === 'dark' ? '#000' : '#f1f5f9',
     opacity: 1,
   }),
 };
@@ -36,6 +37,9 @@ export default function RootLayout({
     setDarkMode(!darkMode);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <html lang='en'>
       <body>
@@ -47,7 +51,10 @@ export default function RootLayout({
           custom={darkMode ? 'dark' : 'light'}
         >
           {/* <ToggleSwitch isOn={darkMode} handleClick={handleDarkMode} /> */}
+
+          <Header />
           <main>{children}</main>
+          <Footer />
         </motion.div>
       </body>
     </html>

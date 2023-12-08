@@ -8,14 +8,5 @@ import Contact from '../components/sections/Contact';
 import React from 'react';
 
 export default function Index() {
-  return (
-    <>
-      <Hero />
-      <Tools />
-      <About />
-      <Work />
-      <Projects />
-      <Contact />
-    </>
-  );
+  return <>Home</>;
 }
