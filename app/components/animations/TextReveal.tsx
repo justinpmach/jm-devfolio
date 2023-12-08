@@ -28,7 +28,7 @@ export default function TextReveal({
   textSecond,
 }: {
   textFirst: string;
-  textSecond: string;
+  textSecond?: string;
 }) {
   return (
     <motion.span initial='hidden' animate='visible' variants={sentenceVariants}>
