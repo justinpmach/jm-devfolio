@@ -11,6 +11,8 @@ interface Project {
   title: string;
   src: string;
   tools: string[];
+  link: string;
+  desc: string;
 }
 
 const sliderVariants = {

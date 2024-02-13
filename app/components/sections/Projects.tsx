@@ -12,15 +12,6 @@ interface Project {
   desc: string;
 }
 
-// Maintained and improved Angular application while simultaneously assisting in a large-scale transition to React and Tailwind
-// Played a key role in implementing numerous successful A/B tests, leading to revenue increase and operational savings
-// Led the successful redesign of the core product application, increasing user experience and delivering a fresh, well-received look
-
-// Developed a bug tracker and reporter for company-wide use via Slack workflows, creating tickets in Jira via Zappier
-// Started as a QA Engineer, quickly transitioning to a dual role that included Front End Developer responsibilities within three months
-// Assisted the Member Services team in resolving bugs, providing large-scale and individual-level solutions for immediate clients
-// Worked closely with the Advisors team to maintain and enhance the advisor dashboard, a critical revenue source for the company
-
 const projects: Project[] = [
   {
     id: 'the_missing_piece',
