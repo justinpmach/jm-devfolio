@@ -23,22 +23,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: 'alphadao',
-    title: 'AlphaDao',
-    src: '/alphadao-web.png',
-    tools: ['Next.js', 'Web3.js', 'Tailwind'],
-    link: '',
-    desc: 'Where crypto traders can track the hottest and latest crypto twitter accounts.',
-  },
-  {
-    id: 'dekage',
-    title: 'Dekage',
-    src: '/dekage-web.png',
-    tools: ['Python', 'Django', 'Bootstrap'],
-    link: 'https://www.dekageshop.com/',
-    desc: 'Sticker shop that caters to KPOP and KDrama fans.',
-  },
-  {
     id: 'the_missing_piece',
     title: 'The Missing Piece',
     src: '/missing-piece.png',
@@ -53,6 +37,22 @@ const projects: Project[] = [
     tools: ['HTML', 'CSS', 'Javascript'],
     link: 'https://vincenttpham.github.io/iron_grind/',
     desc: 'Fitness club landing page promoting health and wellness through hardwork and discipline.',
+  },
+  {
+    id: 'alphadao',
+    title: 'AlphaDao',
+    src: '/alphadao-web.png',
+    tools: ['Next.js', 'Web3.js', 'Tailwind'],
+    link: '',
+    desc: 'Where crypto traders can track the hottest and latest crypto twitter accounts.',
+  },
+  {
+    id: 'dekage',
+    title: 'Dekage',
+    src: '/dekage-web.png',
+    tools: ['Python', 'Django', 'Bootstrap'],
+    link: 'https://www.dekageshop.com/',
+    desc: 'Sticker shop that caters to KPOP and KDrama fans.',
   },
   {
     id: 'rocketship',
