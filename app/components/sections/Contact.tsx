@@ -4,8 +4,8 @@ import SlideIn from '../animations/SlideIn';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
-// import { faFileLines } from '@fortawesome/free-solid-svg-icons/faFileLines';
 import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload';
+// import { faFileLines } from '@fortawesome/free-solid-svg-icons/faFileLines';
 
 export default function Contact() {
   return (

@@ -5,7 +5,7 @@ import TextReveal from '../animations/TextReveal';
 export default function Hero() {
   return (
     <section id='home'>
-      <div className='grid gap-8 lg:grid-cols-2 w-full lg:px-20 xl:px-28'>
+      <div className='grid gap-8 lg:grid-cols-2 w-full lg:px-20 xl:px-28 '>
         {/* Hero Title */}
         <div className='flex flex-col space-y-6 text-center lg:text-right lg:justify-center lg:items-end rounded-sm'>
           {/* <span className='text-2xl md:text-3xl xl:text-4xl font-semibold tracking-tighter'>

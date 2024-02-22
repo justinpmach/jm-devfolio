@@ -51,7 +51,7 @@ export default function DrawSquareHero() {
     return src;
   };
   return (
-    <div className='relative flex justify-center items-center'>
+    <div className='relative flex justify-center lg:justify-start items-center'>
       <motion.div
         className='absolute top-28 w-[400px] h-1/4 skew-y-12 bg-gray-50'
         variants={skewVariants}
@@ -72,7 +72,7 @@ export default function DrawSquareHero() {
           ry='0.2rem'
           stroke='#e2e8f0'
           variants={draw}
-          style={{ fill: '#cbd5e1' }}
+          style={{ fill: '#cbd5e138' }}
         />
       </motion.svg>
       <div className='absolute flex justify-center items-center '>
