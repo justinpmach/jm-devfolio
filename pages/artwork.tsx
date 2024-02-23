@@ -1,11 +1,12 @@
 // import { useRef, useState } from 'react';
 // import { motion } from 'framer-motion';
-import Page from '@/app/components/page';
+import Curve from '@/app/components/Curve';
+import Page from '@/app/components/Layout';
 import ArtworkGrid from '@/app/components/sections/ArtworkGrid';
 
 export default function Artwork() {
   return (
-    <Page>
+    <Curve>
       <section
         id='artwork'
         className='h-screen w-full min-h-screen max-w-full text-white flex justify-center items-center bg-artwork'
@@ -15,6 +16,6 @@ export default function Artwork() {
         </h1> */}
         <ArtworkGrid />
       </section>
-    </Page>
+    </Curve>
   );
 }

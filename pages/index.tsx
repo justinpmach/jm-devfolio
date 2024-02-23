@@ -1,8 +1,8 @@
 import DrawSquareHero from '@/app/components/animations/DrawSquareHero';
 import SlideIn from '@/app/components/animations/SlideIn';
 import TextReveal from '@/app/components/animations/TextReveal';
-import Page from '@/app/components/page';
-
+import Curve from '@/app/components/Curve';
+import Layout from '@/app/components/Layout';
 import { Metadata } from 'next';
 import { useRouter } from 'next/router';
 
@@ -17,13 +17,13 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <Page>
+    <Curve>
       {/* <h1 className='absolute top-[50%] left-[50%] translate-x-1/2 translate-y-1/2 uppercase text-center font-semibold text-[100px] leading-[90%]'>
         Home
       </h1> */}
       <section
         id='home'
-        className='h-screen py-28 lg:py-36 xl:py-40 w-full flex justify-center items-center bg-home text-white'
+        className='h-screen py-28 lg:py-36 xl:py-40 w-full flex justify-center items-center bg-home text-white z-20'
       >
         <div className='grid gap-8 lg:grid-cols-2 w-full lg:px-20 xl:px-28'>
           {/* Hero Title */}
@@ -47,6 +47,6 @@ export default function Home() {
           <DrawSquareHero />
         </div>
       </section>
-    </Page>
+    </Curve>
   );
 }

@@ -1,6 +1,7 @@
 // import { useRef, useState } from 'react';
 // import { motion } from 'framer-motion';
-import Page from '@/app/components/page';
+import Curve from '@/app/components/Curve';
+import Page from '@/app/components/Layout';
 
 // export const metadata: Metadata = {
 //   title: 'Justin Mach Dev',
@@ -70,7 +71,7 @@ export default function Skills() {
   // };
 
   return (
-    <Page>
+    <Curve>
       <section
         id='skills'
         className='w-full h-full min-h-screen max-w-full flex justify-center items-center bg-skills'
@@ -122,6 +123,6 @@ export default function Skills() {
           />
         </div> */}
       </section>
-    </Page>
+    </Curve>
   );
 }

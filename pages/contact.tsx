@@ -1,14 +1,15 @@
 import ContactForm from '@/app/components/ContactForm';
-import Page from '@/app/components/page';
+import Page from '@/app/components/Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload';
+import Curve from '@/app/components/Curve';
 
 export default function Contact() {
   return (
-    <Page>
+    <Curve>
       <h1 className='absolute top-[50%] left-[50%] translate-x-1/2 translate-y-1/2 uppercase text-center font-semibold text-[100px] leading-[90%]'>
         Contact
       </h1>
@@ -71,6 +72,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-    </Page>
+    </Curve>
   );
 }

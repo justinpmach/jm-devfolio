@@ -1,9 +1,10 @@
 import SlideIn from '@/app/components/animations/SlideIn';
-import Page from '@/app/components/page';
+import Curve from '@/app/components/Curve';
+import Layout from '@/app/components/Layout';
 
 export default function About() {
   return (
-    <Page>
+    <Curve>
       {/* <SlideIn>
               </SlideIn> */}
       <section
@@ -58,6 +59,6 @@ export default function About() {
         </div> */}
         </div>
       </section>
-    </Page>
+    </Curve>
   );
 }
