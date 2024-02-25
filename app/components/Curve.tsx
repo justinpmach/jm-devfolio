@@ -1,9 +1,7 @@
 import { useRouter } from 'next/router';
-import Header from './header';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { AnimatePresence, motion } from 'framer-motion';
-import Link from 'next/link';
+import { Variants, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const routes = {
@@ -70,7 +68,7 @@ const translate = {
 //   exit: { opacity: 1 },
 // };
 
-const anim = variants => {
+const anim = (variants: Variants) => {
   return {
     initial: 'initial',
     animate: 'enter',
@@ -111,7 +109,7 @@ export default function Curve({ children }: { children: React.ReactNode }) {
       />
       <motion.p
         {...anim(text)}
-        className='absolute top-[40%] left-1/2 text-black text-[46px] z-30 -translate-x-1/2 text-center'
+        className='absolute top-[40%] left-1/2 text-black text-[100px] z-30 -translate-x-1/2 text-center uppercase'
       >
         {routes[router.route]}
       </motion.p>
@@ -121,7 +119,7 @@ export default function Curve({ children }: { children: React.ReactNode }) {
   );
 }
 
-const SVG = ({ width, height }) => {
+const SVG = ({ width, height }: { width: number; height: number }) => {
   const initialPath = `
     M0 300
     Q${width / 2} 0 ${width} 300
