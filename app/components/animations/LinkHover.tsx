@@ -85,7 +85,7 @@ const WordAnimated = ({
       variants={titleVariants}
       initial='hidden'
       animate={isHovered ? 'visible' : 'hidden'}
-      className='whitespace-nowrap relative py-[1em] px-[2em]'
+      className='whitespace-nowrap relative p-4 md:py-[1em] md:px-[2em]'
     >
       {title.split('').map((char, i) =>
         char === ' ' ? (

@@ -34,7 +34,7 @@ const translate = {
   },
   enter: {
     top: '-100vh',
-    transition: { duration: 0.75, delay: 0.35, ease: [0.76, 0, 0.24, 1] },
+    transition: { duration: 0.75, delay: 0.3, ease: [0.76, 0, 0.24, 1] },
     transitionEnd: {
       top: '100vh',
     },
@@ -77,6 +77,14 @@ const anim = (variants: Variants) => {
   };
 };
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { delay: 1, duration: 0.7 },
+  },
+};
+
 export default function Curve({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   // const router = useRouter();
@@ -109,12 +117,19 @@ export default function Curve({ children }: { children: React.ReactNode }) {
       />
       <motion.p
         {...anim(text)}
-        className='absolute top-[40%] left-1/2 text-black text-[100px] z-30 -translate-x-1/2 text-center uppercase'
+        className='absolute top-[40%] left-1/2 text-white text-3xl z-30 -translate-x-1/2 text-center uppercase'
       >
         {routes[router.route]}
       </motion.p>
       {dimensions.width > 0 && <SVG {...dimensions} />}
-      {children}
+      <motion.div
+        initial='hidden'
+        animate='visible'
+        exit='hidden'
+        variants={containerVariants}
+      >
+        {children}
+      </motion.div>
     </div>
   );
 }
@@ -164,10 +179,7 @@ const SVG = ({ width, height }: { width: number; height: number }) => {
       {...anim(translate)}
       className='w-screen h-[calc(100vh+600px)] top-[-300px] left-0 fixed pointer-events-none'
     >
-      <motion.path
-        {...anim(curve(initialPath, targetPath))}
-        fill='#fff'
-      ></motion.path>
+      <motion.path {...anim(curve(initialPath, targetPath))}></motion.path>
     </motion.svg>
   );
 };

@@ -2,15 +2,61 @@
 // import { motion } from 'framer-motion';
 import Curve from '@/app/components/Curve';
 import Page from '@/app/components/Layout';
+import ProjectsCarousel from '@/app/components/animations/ProjectsCarousel';
+import SlideIn from '@/app/components/animations/SlideIn';
+import { useState } from 'react';
 
-// export const metadata: Metadata = {
-//   title: 'Justin Mach Dev',
-//   description: 'Frontend Developer',
-//   icons: {
-//     icon: '/favicon.ico',
-//   },
-// };
+interface Project {
+  id: string;
+  title: string;
+  src: string;
+  tools: string[];
+  link: string;
+  desc: string;
+}
 
+const projects: Project[] = [
+  {
+    id: 'the_missing_piece',
+    title: 'The Missing Piece',
+    src: '/missing-piece.png',
+    tools: ['Python', 'Django', 'Bootstrap'],
+    link: 'https://justinmachdev.pythonanywhere.com/',
+    desc: 'Social media app catered to the Autism community, allowing users affected by this disorder to connect.',
+  },
+  {
+    id: 'iron_grind',
+    title: 'IronGrind',
+    src: '/Iron-Grind-web.png',
+    tools: ['HTML', 'CSS', 'Javascript'],
+    link: 'https://vincenttpham.github.io/iron_grind/',
+    desc: 'Fitness club landing page promoting health and wellness through hardwork and discipline.',
+  },
+  {
+    id: 'alphadao',
+    title: 'AlphaDao',
+    src: '/alphadao-web.png',
+    tools: ['Next.js', 'Web3.js', 'Tailwind'],
+    link: '',
+    desc: 'Where crypto traders can track the hottest and latest crypto twitter accounts.',
+  },
+  {
+    id: 'dekage',
+    title: 'Dekage',
+    src: '/dekage-web.png',
+    tools: ['Python', 'Django', 'Bootstrap'],
+    link: 'https://www.dekageshop.com/',
+    desc: 'Sticker shop that caters to KPOP and KDrama fans.',
+  },
+  {
+    id: 'rocketship',
+    title: 'RocketShip',
+    src: '/RocketShip-web.png',
+    tools: ['C#', 'ASP.NET Core', 'Bootstrap'],
+    link: 'http://18.188.37.161/HowToPlay',
+    desc: 'Rocket Ship is a randomly generated social card game, up to 10 players allowed through different IP addresses. Utilizing the functionality of object oriented programming and version control.',
+  },
+];
 const skillItems = [
   {
     name: 'Languages',
@@ -40,7 +86,8 @@ const skillItems = [
   },
 ];
 
-export default function Skills() {
+export default function Projects() {
+  const [selected, setSelected] = useState<Project | null>(projects[0]);
   // const [selectedId, setSelectedId] = useState(null);
   // const [canDrag, setCanDrag] = useState(false);
   // const containerRefs = useRef(new Array());
@@ -73,17 +120,47 @@ export default function Skills() {
   return (
     <Curve>
       <section
-        id='skills'
-        className='w-full h-full min-h-screen max-w-full flex justify-center items-center bg-skills'
+        id='projects'
+        className='w-full h-full min-h-screen max-w-full grid gap-8 grid-cols-1 justify-center items-center bg-skills'
       >
-        <ul className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-4 p-8'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5 px-8 md:px-12 lg:px-20 xl:px-28'>
+          <ProjectsCarousel projects={projects} setSelected={setSelected} />
+          <div className='flex flex-col items-center justify-center w-full p-7 text-white'>
+            {selected && (
+              <>
+                <a
+                  href={selected?.link}
+                  className='uppercase text-xl font-semibold tracking-widest'
+                >
+                  {selected?.title}
+                </a>
+                <div className='flex w-full justify-center items-center'>
+                  <span className='text-xs mr-2 ml-2 first-of-type:ml-0 last-of-type:mr-0 border-r border-black pr-2 last-of-type:pr-0 last-of-type:border-0'>
+                    {selected?.tools?.[0]}
+                  </span>
+                  <span className='text-xs mr-2 ml-2 first-of-type:ml-0 last-of-type:mr-0 border-r border-black pr-2 last-of-type:pr-0 last-of-type:border-0'>
+                    {selected?.tools?.[1]}
+                  </span>
+                  <span className='text-xs mr-2 ml-2 first-of-type:ml-0 last-of-type:mr-0 border-r border-black pr-2 last-of-type:pr-0 last-of-type:border-0'>
+                    {selected?.tools?.[2]}
+                  </span>
+                </div>
+                <div className='flex w-full text-center'></div>
+              </>
+            )}
+            <div className='mt-8 flex w-full justify-center items-center'>
+              <p className='text-center text-sm'>{selected?.desc}</p>
+            </div>
+          </div>
+        </div>
+        {/* <ul className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-4 p-8'>
           <div className='bg-white border rounded-lg flex justify-center items-center h-[320px]'></div>
           <div className='bg-white border rounded-lg flex justify-center items-center h-[320px]'></div>
           <div className='bg-white border rounded-lg flex justify-center items-center h-[320px]'></div>
           <div className='bg-white border rounded-lg flex justify-center items-center h-[320px]'></div>
           <div className='bg-white border rounded-lg flex justify-center items-center h-[320px]'></div>
           <div className='bg-white border rounded-lg flex justify-center items-center h-[320px]'></div>
-        </ul>
+        </ul> */}
         {/* className='w-full h-full absolute top-0 left-0 leading-[33rem] max-w-full whitespace-nowrap overflow-x-scroll' */}
         {/* className='h-screen text-white py-28 lg:py-36 xl:py-40 w-full flex flex-col justify-center items-start bg-skills' */}
         {/* <h1 className='text-white uppercase text-right font-semibold text-[100px] leading-[90%]'>

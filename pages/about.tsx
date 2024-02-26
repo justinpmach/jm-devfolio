@@ -20,7 +20,7 @@ export default function About() {
                 About.
               </span> */}
             <p className='text-sm lg:text-xl font-semibold text-white tracking-wide mt-8'>
-              Dog dad | Artist | Techie
+              Dog dad | Developer | Artist
             </p>
             <p className='mt-3 text-xl lg:text-2xl'>
               Highly skilled frontend developer based in
@@ -37,11 +37,11 @@ export default function About() {
               </p>
               <p className='text-md'>
                 When I&apos;m not coding beautiful and intuitive designs for the
-                web,
+                web, I enjoy painting and creating digital art.
               </p>
-              <p className='text-md'>
+              {/* <p className='text-md'>
                 I enjoy painting and creating digital art.
-              </p>
+              </p> */}
             </div>
           </div>
           {/* <div className='row-start-1 lg:row-start-1 relative flex items-center justify-center w-full'>

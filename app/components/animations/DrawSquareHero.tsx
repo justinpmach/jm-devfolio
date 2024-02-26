@@ -45,26 +45,13 @@ const skewVariants: Variants = {
   },
   // transform: skewY(12deg);
 };
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { delay: 1, duration: 0.7 },
-  },
-};
 
 export default function DrawSquareHero() {
   const loaderProp = ({ src }: { src: string }) => {
     return src;
   };
   return (
-    <motion.div
-      initial='hidden'
-      animate='visible'
-      exit='hidden'
-      variants={containerVariants}
-      className='relative flex justify-center lg:justify-start items-center z-20'
-    >
+    <div className='relative flex justify-center lg:justify-start items-center z-20'>
       <motion.div
         className='absolute top-28 w-[400px] h-1/4 skew-y-12 bg-gray-50'
         variants={skewVariants}
@@ -101,6 +88,6 @@ export default function DrawSquareHero() {
           />
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 }
