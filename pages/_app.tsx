@@ -2,7 +2,6 @@ import { AppProps } from 'next/app';
 import { AnimatePresence } from 'framer-motion';
 
 import './globals.css';
-import Link from 'next/link';
 import Header from '@/app/components/header';
 
 const App = ({ Component, pageProps, router }: AppProps) => {

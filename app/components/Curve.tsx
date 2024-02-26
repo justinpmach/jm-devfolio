@@ -11,7 +11,7 @@ interface IRoutes {
 const routes: IRoutes = {
   '/': 'Home',
   '/about': 'About',
-  '/skills': 'Skills',
+  '/projects': 'Projects',
   '/artwork': 'Artwork',
   '/contact': 'Contact',
 };
