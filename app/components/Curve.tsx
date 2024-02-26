@@ -139,21 +139,21 @@ export default function Curve({ children }: { children: React.ReactNode }) {
 }
 
 const SVG = ({ width, height }: { width: number; height: number }) => {
-  const initialPath = `
+  const initialPath: string = `
     M0 300
     Q${width / 2} 0 ${width} 300
     L${width} ${height + 300}
     Q${width / 2} ${height + 600} 0 ${height + 300}
     L0 0
   `;
-  const targetPath = `
+  const targetPath: string = `
     M0 300
     Q${width / 2} 0 ${width} 300
     L${width} ${height}
     Q${width / 2} ${height} 0 ${height}
     L0 0
   `;
-  const curve = (initialPath, targetPath) => {
+  const curve = (initialPath: string, targetPath: string) => {
     return {
       initial: { d: initialPath },
       enter: {
