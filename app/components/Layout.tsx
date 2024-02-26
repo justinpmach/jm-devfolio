@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import Header from './header';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion } from 'framer-motion';
+import { Variants, motion } from 'framer-motion';
 import Link from 'next/link';
 
 const menuItems = [
@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   //   router.push(path);
   // };
 
-  const anim = variants => {
+  const anim = (variants: Variants) => {
     return {
       initial: 'initial',
       animate: 'enter',
