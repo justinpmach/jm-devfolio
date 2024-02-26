@@ -4,7 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Variants, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-const routes = {
+interface IRoutes {
+  [path: string]: string;
+}
+
+const routes: IRoutes = {
   '/': 'Home',
   '/about': 'About',
   '/skills': 'Skills',
