@@ -18,9 +18,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <Curve>
-      {/* <h1 className='absolute top-[50%] left-[50%] translate-x-1/2 translate-y-1/2 uppercase text-center font-semibold text-[100px] leading-[90%]'>
-        Home
-      </h1> */}
       <section
         id='home'
         className='h-screen py-28 lg:py-36 xl:py-40 w-full flex justify-center items-center bg-home text-white z-20'
@@ -28,9 +25,6 @@ export default function Home() {
         <div className='grid gap-8 lg:grid-cols-2 w-full lg:px-20 xl:px-28'>
           {/* Hero Title */}
           <div className='flex flex-col space-y-6 text-center lg:text-right lg:justify-center lg:items-end rounded-sm'>
-            {/* <span className='text-2xl md:text-3xl xl:text-4xl font-semibold tracking-tighter'>
-            <TextReveal textFirst='Hi,' />
-          </span> */}
             <span className='text-6xl md:text-8xl xl:text-9xl font-bold tracking-tighter'>
               <TextReveal textFirst='Justin Mach' />
             </span>
